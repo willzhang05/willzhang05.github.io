@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="description">
+    <meta content="William Zhang" name="author">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="favicon-image.png" rel="icon" type="image/ico">
+    <link href="main-style.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <title>William Zhang</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="menu">
+            <button class="menu-buttons">
+				<a class="link" href="index.html">HOME</a>
+            </button>
+            <button class="menu-buttons">
+				<a class="link" href="http://willzhang05.github.io/about">ABOUT</a>
+            </button>
+            <button class="menu-buttons">
+				<a class="link" href="http://willzhang05.github.io">PROJECTS</a>
+            </button>
+        </div>
+        <div id="header-wrapper">
+            <div id="header">
+                <div id="banner"></div>
+            </div>
+        </div>
+        <div id="content-wrapper">
+            <div id="content">
+                <div class="card">
+                    <div class="description">
+                        Hi! I'm William Zhang.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="description">
+                        Test. Click This Button!
+                    </div>
+                    <div id="counter" onclick="reset()">
+                        0
+                    </div>
+                    <button class="circle-button red" onclick="increment()">+</button>
+                    <script>
+                        var reset = function() {
+                            document.getElementById('counter').innerHTML = 0;
+                        }
+                        var increment = function() {
+                            var qty = parseInt(document.getElementById('counter').innerHTML, 10);
+                            document.getElementById('counter').innerHTML = qty + 1;
+                        }
+                    </script>
+                </div>
+                <div class="card">
+                    <div class="render">
+                        <canvas height="250%" id="mandelbrot" width="250%"></canvas>
+                        <script src="scripts/mandelbrot.js"></script>
+                    </div>
+                    <div class="description">
+                        <span style="display:block">Press "START" to begin
+                        Mandelbrot fractal generation, "STOP" to pause
+                        generation, and "RESET" to start generation
+                        over.</span>
+                        <button class="basic-button green" onclick="interval()">START</button>
+                        <button class="basic-button red" onclick="stopInterval()">STOP</button>
+                        <button class="basic-button blue" onclick="resetGen()">RESET</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer-wrapper">
+            <div id="footer">
+                <span>Inspired by Google Material Design. Powered by <a class=
+                "source" href="https://www.nginx.com/" target=
+                "_blank">Nginx</a>.</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
