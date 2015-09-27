@@ -5,22 +5,25 @@
     <meta content="" name="description">
     <meta content="William Zhang" name="author">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link href="favicon-image.png" rel="icon" type="image/ico">
-    <link href="main-style.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <title>William Zhang</title>
+    <link href="" rel="icon" type="image/ico">
+	<link href="main-style.css" rel="stylesheet"/>
 </head>
 <body>
+	<div id="sidebar-wrapper">
+		<div id="sidebar">
+		</div>
+
+	</div>
     <div id="wrapper">
         <div id="menu">
-            <button class="menu-buttons">
-				<a class="link" href="index.html">HOME</a>
+            <button class="menu-buttons" onclick="window.location.href='index.html'">
+				HOME
             </button>
-            <button class="menu-buttons">
-				<a class="link" href="http://willzhang05.github.io/about">ABOUT</a>
+            <button class="menu-buttons" onclick="window.location.href='about.html'">
+				ABOUT
             </button>
-            <button class="menu-buttons">
-				<a class="link" href="http://willzhang05.github.io">PROJECTS</a>
+            <button class="menu-buttons" onclick="window.location.href='projects.html'">
+				PROJECTS
             </button>
         </div>
         <div id="header-wrapper">
@@ -32,12 +35,27 @@
             <div id="content">
                 <div class="card">
                     <div class="description">
-                        Hi! I'm William Zhang.
+						<img src="images/logo.png" alt="logo"/>
+                        <h1>WILLIAM ZHANG</h1>
+						<div>I'm currently a student @ Thomas Jefferson High School for Science and Technology.</div>
+						<button class="basic-button" onclick="window.location.href='http://willzhang05.github.io/resume.pdf'">Resume</div>
                     </div>
                 </div>
-                <div class="card">
+				<!--<div class="card">
                     <div class="description">
-                        Test. Click This Button!
+						<span>
+							Follow me on GitHub: 
+							<a href="https://github.com/willzhang05">@willzhang05</a>
+						</span>
+						<span>
+							Follow me on GitHub: 
+							<a href="https://github.com/willzhang05">@willzhang05</a>
+						</span>
+					</div>
+                </div>-->
+                <!--<div class="card"> 
+                    <div class="description">
+                        Click This Button!
                     </div>
                     <div id="counter" onclick="reset()">
                         0
@@ -56,7 +74,9 @@
                 <div class="card">
                     <div class="render">
                         <canvas height="250%" id="mandelbrot" width="250%"></canvas>
-                        <script src="scripts/mandelbrot.js"></script>
+						<script>
+							function colorGen(){return Math.floor(255*Math.random())}function resetGen(){xp=0,r=colorGen(),g=colorGen(),b=colorGen()}function interval(){sI=setInterval(update,50)}function stopInterval(){clearInterval(sI)}var canvas=document.getElementById("mandelbrot"),ctx=canvas.getContext("2d"),w=canvas.width,h=canvas.height,xp=0,sI,imgData=ctx.getImageData(0,0,w,h),data=imgData.data,r=colorGen(),g=colorGen(),b=colorGen(),mandelbrot=function(){for(var a=4/w,t=4/h,n=0;h>n;n++)for(var o=xp*a+(2-w*a),e=n*t+(2-h*t),c=0,l=0,d=0,p=0;100>p;p++)if(c=l,l=Math.pow(l,2)-Math.pow(d,2)+o,d=2*c*d+e,Math.sqrt(Math.pow(l,2)+Math.pow(d,2))>=2){data[p]=r,data[++p]=g,data[++p]=b,data[++p]=255,ctx.putImageData(imgData,xp,n);break}},update=function(){xp++,mandelbrot(),xp>=w&&stopInterval()};
+						</script>
                     </div>
                     <div class="description">
                         <span style="display:block">Press "START" to begin
@@ -68,13 +88,12 @@
                         <button class="basic-button blue" onclick="resetGen()">RESET</button>
                     </div>
                 </div>
-            </div>
+            </div>-->
+			
         </div>
         <div id="footer-wrapper">
             <div id="footer">
-                <span>Inspired by Google Material Design. Powered by <a class=
-                "source" href="https://www.nginx.com/" target=
-                "_blank">Nginx</a>.</span>
+                <span>Inspired by Google Material Design.</span>
             </div>
         </div>
     </div>
