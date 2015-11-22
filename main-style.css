@@ -18,6 +18,9 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     vertical-align: baseline;
     border: 0
 }
+ul {
+    list-style-type: square;
+}
 h1 {
     font-weight: bold;
     font-size: 32px;
@@ -29,18 +32,6 @@ h2 {
     margin-top: 0;
     margin-bottom: 15px
 }
-/*::-webkit-scrollbar {
-      width: 15px;
-}
-
-::-webkit-scrollbar-track {
-      background-color: #EEE;
-}
-
- ::-webkit-scrollbar-thumb{
-   background-color: #BDBDBD;
-
-}*/
 body {
     overflow-x: hidden;
     width: 100%;
@@ -232,27 +223,23 @@ button {
     height: 100%
 }
 #interests-wrapper {
-    margin: auto;
-    width: 25%;
-    height: 500px;
-    min-width: 150px;
-    height: 175px;
-    text-align: center;
-    padding-left: 7.5%;
+    width: 40%;
+	height: 250px;
+	margin-left: 30%;
+	display: block;
+	text-align: center;
 }
 #interests-left {
-    float: left;
-    width: 25%;
-    min-width: 150px;
-    text-align: left;
-    padding: 0 15px;
+	text-align: left;
+	width: 150px;
+	padding-left: 75px;
+	display: inline-block;
 }
 #interests-right {
-    float: left;
-    width: 25%;
-    min-width: 150px;
     text-align: left;
-    padding: 0 15px;
+	width: 150px;
+	padding-left: 75px;
+	display: inline-block;
 }
 #footer-wrapper {
     position: absolute;
