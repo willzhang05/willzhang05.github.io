@@ -19,7 +19,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     border: 0
 }
 ul {
-    list-style-type: square;
+    list-style: none;
 }
 h1 {
     font-weight: bold;
@@ -223,22 +223,15 @@ button {
     height: 100%
 }
 #interests-wrapper {
-    width: 40%;
-	height: 250px;
-	margin-left: 30%;
-	display: block;
-	text-align: center;
+	width: 25%;
+    height: 100%;
+	padding-left: 37.5%;
+	padding-right: 37.5%;
+    overflow: hidden;
 }
-#interests-left {
-	text-align: left;
-	width: 150px;
-	padding-left: 75px;
-	display: inline-block;
-}
-#interests-right {
-    text-align: left;
-	width: 150px;
-	padding-left: 75px;
+#interests {
+    width: 100%;
+    height: 100px;
 	display: inline-block;
 }
 #footer-wrapper {
@@ -298,8 +291,29 @@ button {
     -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26)
 }
-.card {
-    padding: 15px
+.image-card {
+    position: relative;
+    display: inline-block;
+    top: -150px;
+    overflow: hidden;
+    width: 300px;
+    min-height: 256px;
+    margin: 2.5vh 15px;
+    cursor: pointer;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    background-color: #eee;
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 0 6px rgba(0, 0, 0, .1);
+    box-shadow: 0 0 6px rgba(0, 0, 0, .1)
+}
+.image-card:hover {
+    -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
+    -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26)
 }
 #counter {
     display: block;
