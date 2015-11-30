@@ -1,1 +1,0 @@
-var string = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=e231c1ba5cd23dadce11b95fac1c81fa&user_id=126785613%40N04&tags=105b18dee6f551e2dbb0ddcb4ddaa01a&format=json&nojsoncallback=1&auth_token=72157661658455321-0e97f1bc6666191c&api_sig=62f876eb0e2444df8f3e7a1db7ca28e3";
