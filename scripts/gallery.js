@@ -11,7 +11,7 @@ function jsonFlickrApi(data) {
     var full = data.photoset;
 	var photos = data.photoset.photo;
 	for(var i = 0; i < photos.length; i++) {
-		linkArr.push("http://farm" + photos[i].farm + ".staticflickr.com/" + photos[i].server + "/" + photos[i].id + "_" + photos[i].secret + "_z" + ".jpg");
+		linkArr.push("https://farm" + photos[i].farm + ".staticflickr.com/" + photos[i].server + "/" + photos[i].id + "_" + photos[i].secret + "_z" + ".jpg");
 		capArr.push("Photo");
 	}
 	var format = "http://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg"
