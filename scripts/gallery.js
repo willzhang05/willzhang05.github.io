@@ -19,10 +19,18 @@ function jsonFlickrApi(data) {
 
 function loadMore() {
     var temp = imgNum;
-    for (var i = imgNum; i < temp + 4; i++) {
-        imgMod.push(new imgModule(linkArr[i], capArr[i]));
-        imgNum++;
-    }
+	if(temp + 4 > linkArr.length) {
+		for (var i = imgNum; i < linkArr.length; i++) {
+			imgMod.push(new imgModule(linkArr[linkArr.length - i - 1], capArr[capArr.length - i - 1]));
+			imgNum++;
+		}
+		document.getElementById("load-more").style.display = "none";
+	} else {
+		for (var i = imgNum; i < temp + 4; i++) {
+			imgMod.push(new imgModule(linkArr[linkArr.length - i - 1], capArr[capArr.length - i - 1]));
+			imgNum++;
+		}
+	}
 }
 
 function expandImage() {
@@ -31,7 +39,7 @@ function expandImage() {
 
 window.onload = function() {
     for (var i = imgNum; i < 12; i++) {
-        imgMod.push(new imgModule(linkArr[i], capArr[i]));
+        imgMod.push(new imgModule(linkArr[linkArr.length - i - 1], capArr[capArr.length - i - 1]));
         imgNum++;
     }
 }
