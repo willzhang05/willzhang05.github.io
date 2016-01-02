@@ -227,6 +227,19 @@ button {
 	top: -150px;
 	margin-bottom: -130px;
 }
+#gallery {
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	display: none;
+	text-align: center;
+	background-color: #eee;
+	z-index: 10000;
+	position: fixed;
+	-webkit-box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    -moz-box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
 #interests-wrapper {
     width: 25%;
     height: 100%;
@@ -359,6 +372,30 @@ button {
 	padding: 4px;
 	margin-top: calc(100% - 48px);
     color: #eee;
+}
+.exit-button {
+	float: left;
+	width: 48px;
+	height: inherit;
+	color: #464646;
+	font-size: 18px;
+	background-color: inherit;
+	/*background-image: url('../icons/ic_close_black_48px.svg');*/
+	background-size: 45% 45%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.exit-button:hover {
+	background-color: #F44336;
+	color: #fff;
+}
+.window-bar {
+	height: 48px;
+}
+.window-label {
+	float:left;
+	width: calc(100% - 48px);
+	height: inherit;
 }
 #sidebar-wrapper {
     width: 200px;
