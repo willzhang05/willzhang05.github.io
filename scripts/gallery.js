@@ -1,40 +1,44 @@
 "use strict"
-var string = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=9f46232676650675ddd2cc7bf3ca979d&user_id=126785613%40N04&format=json&photoset_id=72157659451270924",
-	script = document.createElement("script");
+var string = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=ae976304a535e7ed8ff2100c1d5b2dc7&photoset_id=72157659451270924&user_id=126785613%40N04&extras=original_format&format=json&auth_token=72157662917541882-2d4134fa808209d3&api_sig=f2554bc98cdbc3b85492c6e92f747598",
+    script = document.createElement("script");
 script.src = string;
 document.getElementById("wrapper").appendChild(script);
 var linkArr = [],
-	capArr = [],
-	imgMod = [],
-	imgNum = 0;
+    capArr = [],
+    imgMod = [],
+    imgNum = 0;
 
 function jsonFlickrApi(data) {
-    var full = data.photoset;
     var photos = data.photoset.photo;
     for (var i = 0; i < photos.length; i++) {
-        linkArr.push("https://farm" + photos[i].farm + ".staticflickr.com/" + photos[i].server + "/" + photos[i].id + "_" + photos[i].secret + "_z" + ".jpg");
+        linkArr.push(["https://farm" + photos[i].farm + ".staticflickr.com/" + photos[i].server + "/" + photos[i].id + "_" + photos[i].secret + "_z.jpg",
+            "https://farm" + photos[i].farm + ".staticflickr.com/" + photos[i].server + "/" + photos[i].id + "_" + photos[i].originalsecret + "_o." + photos[i].originalformat
+        ]);
         capArr.push(photos[i].title);
     }
 }
 
 function loadMore() {
     var temp = imgNum;
-	if(temp + 4 > linkArr.length) {
-		for (var i = imgNum; i < linkArr.length; i++) {
-			imgMod.push(new imgModule(linkArr[linkArr.length - i - 1], capArr[capArr.length - i - 1]));
-			imgNum++;
-		}
-		document.getElementById("load-more").style.display = "none";
-	} else {
-		for (var i = imgNum; i < temp + 4; i++) {
-			imgMod.push(new imgModule(linkArr[linkArr.length - i - 1], capArr[capArr.length - i - 1]));
-			imgNum++;
-		}
-	}
+    if (temp + 4 > linkArr.length) {
+        for (var i = imgNum; i < linkArr.length; i++) {
+            imgMod.push(new imgModule(linkArr[linkArr.length - i - 1], capArr[capArr.length - i - 1]));
+            imgNum++;
+        }
+        document.getElementById("load-more").style.display = "none";
+    } else {
+        for (var i = imgNum; i < temp + 4; i++) {
+            imgMod.push(new imgModule(linkArr[linkArr.length - i - 1], capArr[capArr.length - i - 1]));
+            imgNum++;
+        }
+    }
 }
 
-function expandImage() {
-    console.log("test")
+function expandImage(url, cap) {
+    document.getElementById("gallery").style.backgroundImage = "url(" + url + ")";
+    document.getElementById("gallery-wrapper").style.opacity = "1";
+    document.getElementById("gallery-wrapper").style.visibility = "visible";
+    document.getElementById("gallery-caption").innerHTML = cap;
 }
 
 window.onload = function() {
@@ -46,6 +50,8 @@ window.onload = function() {
 
 var imgModule = class {
     constructor(url, cap) {
+        this.url = url[0];
+        this.orig = url[1];
         var parent = document.getElementById("content"),
             imgCard = document.createElement("div"),
             mod = document.createElement("div"),
@@ -53,9 +59,9 @@ var imgModule = class {
             label = document.createElement("div");
         //expand = document.createElement("button");
         imgCard.className = "image-card";
-        imgCard.style.backgroundImage = "url(" + url + ")";
+        imgCard.style.backgroundImage = "url(" + url[0] + ")";
         imgCard.onclick = function() {
-            expandImage()
+            expandImage(url[1], cap);
         };
         mod.className = "";
         bar.className = "info-overlay";
