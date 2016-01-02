@@ -97,24 +97,7 @@
                         }
                     </script>
                 </div>
-                <div class="card">
-                    <div class="render">
-                        <canvas height="250%" id="mandelbrot" width="250%"></canvas>
-						<script>
-							function colorGen(){return Math.floor(255*Math.random())}function resetGen(){xp=0,r=colorGen(),g=colorGen(),b=colorGen()}function interval(){sI=setInterval(update,50)}function stopInterval(){clearInterval(sI)}var canvas=document.getElementById("mandelbrot"),ctx=canvas.getContext("2d"),w=canvas.width,h=canvas.height,xp=0,sI,imgData=ctx.getImageData(0,0,w,h),data=imgData.data,r=colorGen(),g=colorGen(),b=colorGen(),mandelbrot=function(){for(var a=4/w,t=4/h,n=0;h>n;n++)for(var o=xp*a+(2-w*a),e=n*t+(2-h*t),c=0,l=0,d=0,p=0;100>p;p++)if(c=l,l=Math.pow(l,2)-Math.pow(d,2)+o,d=2*c*d+e,Math.sqrt(Math.pow(l,2)+Math.pow(d,2))>=2){data[p]=r,data[++p]=g,data[++p]=b,data[++p]=255,ctx.putImageData(imgData,xp,n);break}},update=function(){xp++,mandelbrot(),xp>=w&&stopInterval()};
-						</script>
-                    </div>
-                    <div class="description">
-                        <span style="display:block">Press "START" to begin
-                        Mandelbrot fractal generation, "STOP" to pause
-                        generation, and "RESET" to start generation
-                        over.</span>
-                        <button class="basic-button green" onclick="interval()">START</button>
-                        <button class="basic-button red" onclick="stopInterval()">STOP</button>
-                        <button class="basic-button blue" onclick="resetGen()">RESET</button>
-                    </div>
-                </div>
-            </div>-->
+            -->
         </div>
         <div id="footer-wrapper">
             <div id="footer">

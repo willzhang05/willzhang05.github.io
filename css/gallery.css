@@ -44,7 +44,6 @@
 .image-card {
     position: relative;
     display: inline-block;
-    
     overflow: hidden;
     width: 300px;
     min-height: 256px;
@@ -78,42 +77,42 @@
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
     -o-transition: all .3s ease;
-    transition: all .3s ease;
+    transition: all .3s ease
 }
 .info-overlay:hover {
-    opacity: 0.5;
+    opacity: 0.5
 }
 .info-text {
 	height: 40px;
 	padding: 4px;
 	margin-top: calc(100% - 48px);
-    color: #eee;
+    color: #eee
 }
 .exit-button {
 	float: left;
 	width: 48px;
 	height: inherit;
-	opacity: 1.5;
 	background-color: rgba(0, 0, 0, .5);
 	background-image: url('../icons/ic_close_white_48px.svg');
 	background-size: 45% 45%;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center
 }
 .exit-button:hover {
 	background-color: #F44336;
-	color: #fff;
+	color: #fff
 }
 .window-bar {
-	height: 48px;
+	height: 48px
 }
 .window-label {
 	float:left;
 	width: calc(100% - 48px);
 	height: inherit;
-	line-height: 48px;
+	line-height: 48px
 }
 #gallery-caption {
+	padding-left: -48px;
 	font-size: 20px;
 	color: #fff;
 	background-color: #000;
