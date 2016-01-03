@@ -1,5 +1,5 @@
 "use strict"
-var string = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=ae976304a535e7ed8ff2100c1d5b2dc7&photoset_id=72157659451270924&user_id=126785613%40N04&extras=original_format&format=json&auth_token=72157662917541882-2d4134fa808209d3&api_sig=f2554bc98cdbc3b85492c6e92f747598",
+var string = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=ae976304a535e7ed8ff2100c1d5b2dc7&photoset_id=72157659451270924&user_id=126785613%40N04&extras=original_format&format=json&api_key=9f46232676650675ddd2cc7bf3ca979d",
     script = document.createElement("script");
 script.src = string;
 document.getElementById("wrapper").appendChild(script);
@@ -57,7 +57,6 @@ var imgModule = class {
             mod = document.createElement("div"),
             bar = document.createElement("div"),
             label = document.createElement("div");
-        //expand = document.createElement("button");
         imgCard.className = "image-card";
         imgCard.style.backgroundImage = "url(" + url[0] + ")";
         imgCard.onclick = function() {
@@ -67,10 +66,7 @@ var imgModule = class {
         bar.className = "info-overlay";
         label.className = "info-text";
         label.innerHTML = cap;
-        //expand.className = "expand-button";
-        //expand.onclick = function() {toggleModExpand(imgCard, expand)};
         imgCard.appendChild(bar);
-        //label.appendChild(expand);
         bar.appendChild(label);
         imgCard.appendChild(mod);
         parent.insertBefore(imgCard, document.getElementById("load-more"));
