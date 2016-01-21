@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta content="" name="description">
@@ -7,11 +8,12 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="icons/favicon.ico" rel="icon" type="image/ico">
     <link href="css/main.css" rel="stylesheet" />
-	<link href="css/gallery.css" rel="stylesheet" />
+    <link href="css/gallery.css" rel="stylesheet" />
 </head>
 <title>
     Gallery - William Zhang
 </title>
+
 <body>
     <div id="sidebar-wrapper">
         <div id="sidebar">
@@ -35,21 +37,21 @@
             </div>
         </div>
         <div id="content-wrapper">
-			<div id="gallery-wrapper">
-				<div class="window-bar">
-					<button class="exit-button" onclick="document.getElementById('gallery-wrapper').style.visibility='hidden';document.getElementById('gallery-wrapper').style.opacity='0';"></button>
-					<div class="window-label">
-						<div id="gallery-caption"></div>
-					</div>
-				</div>
-				<div id="gallery"></div>
-			</div>
-			<div id="content">
-				<button id="load-more" onclick="loadMore()">
-					Load More...
-				</button>
-			</div>
-		</div>
+            <div id="gallery-wrapper">
+                <div class="window-bar">
+                    <button class="exit-button" onclick="document.getElementById('gallery-wrapper').style.visibility='hidden';document.getElementById('gallery-wrapper').style.opacity='0';"></button>
+                    <div class="window-label">
+                        <div id="gallery-caption"></div>
+                    </div>
+                </div>
+                <div id="gallery"></div>
+            </div>
+            <div id="content">
+                <button id="load-more" onclick="loadMore()">
+                    Load More...
+                </button>
+            </div>
+        </div>
         <div id="footer-wrapper">
             <div id="footer">
                 <span>Inspired by Material Design.</span>
@@ -58,4 +60,5 @@
     </div>
 </body>
 <script src="scripts/gallery.js"></script>
+
 </html>

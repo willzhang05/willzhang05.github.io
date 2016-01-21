@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <meta content="" name="description">
+    <meta content="Finished projects" name="description">
     <meta content="William Zhang" name="author">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="icons/favicon.ico" rel="icon" type="image/ico">
@@ -11,6 +12,7 @@
 <title>
     Projects - William Zhang
 </title>
+
 <body>
     <div id="sidebar-wrapper">
         <div id="sidebar">
@@ -35,40 +37,43 @@
         </div>
         <div id="content-wrapper">
             <div id="content">
-				<div class="card">
-					<h2>CSL TVMonitor</h2>
-					<div class="description">
-						<span style="display:block">HTML5 Web App designed to be 
+                <div class="card">
+                    <h2>CSL TVMonitor</h2>
+                    <div class="description">
+                        <span style="display:block">HTML5 Web App designed to be 
 						displayed on the 75" TV above the admin pit in the TJ 
 						Computer Systems Lab.</span>
-						<ul class="features">
-							<li>Nagios - Monitor Status</li>
-							<li>Twitter - Display Recent Tweets</li>
-							<li>A Block - Display 8th A activities</li>
-							<li>B Block - Display 8th B activities</li>
-							<li>Plex - Play Media</li>
-						</ul>
-						<button class="basic-button" onclick="window.location.href='tv'">TVMonitor</button>
-					</div>
-				</div>
-				</div>
-				<div class="card">
-					<h2>Mandelbrot Set Generation</h2>
-					<div class="render">
-							<canvas height="250%" id="mandelbrot" width="250%"></canvas>
-							<script src="scripts/mandelbrot.js"></script>
-						</div>
-						<div class="description">
-							<span style="display:block">Press "START" to begin
-							Mandelbrot fractal generation, "STOP" to pause
-							generation, and "RESET" to start generation
-							over.</span>
-							<button class="basic-button green" onclick="interval()">START</button>
-							<button class="basic-button red" onclick="stopInterval()">STOP</button>
-							<button class="basic-button blue" onclick="resetGen()">RESET</button>
-						</div>
-					</div>
-				</div>
+                        <ul class="features">
+                            <li>Nagios - Monitor Status</li>
+                            <li>Twitter - Display Recent Tweets</li>
+                            <li>A Block - Display 8th A activities</li>
+                            <li>B Block - Display 8th B activities</li>
+                            <li>Plex - Play Media</li>
+                        </ul>
+                        <button class="basic-button" onclick="window.location.href='tv'">TVMonitor</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h2>TJShares Redesign</h2>
+                <div class="description">
+                    <span style="display:block">Concept design to replace the current archaic-looking design of <a href="https://shares.tjhsst.edu">shares.tjhsst.edu</a></span>
+                    <button class="basic-button" onclick="window.location.href='https://willzhang05.github.io/TJShares'">TJShares</button>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Mandelbrot Set Generation</h2>
+                <div class="render">
+                    <canvas height="250%" id="mandelbrot" width="250%"></canvas>
+                    <script src="scripts/mandelbrot.js"></script>
+                </div>
+                <div class="description">
+                    <button class="basic-button green" onclick="interval()">START</button>
+                    <button class="basic-button red" onclick="stopInterval()">STOP</button>
+                    <button class="basic-button blue" onclick="resetGen()">RESET</button>
+                </div>
+            </div>
+        </div>
         <div id="footer-wrapper">
             <div id="footer">
                 <span>Inspired by Material Design.</span>
@@ -76,4 +81,5 @@
         </div>
     </div>
 </body>
+
 </html>
