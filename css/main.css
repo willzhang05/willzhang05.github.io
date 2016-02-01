@@ -229,7 +229,7 @@ button {
     max-height: 800px;
     background-image: url('../images/blurredsky.jpg');
     background-repeat: no-repeat;
-    background-position: 0px -150px;
+    background-position: 0px 0px;
     background-size: 200%
 }
 #content-wrapper {

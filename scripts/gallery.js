@@ -35,10 +35,24 @@ function loadMore() {
 }
 
 function expandImage(url, cap) {
-    document.getElementById("gallery").style.backgroundImage = "url(" + url + ")";
-    document.getElementById("gallery-wrapper").style.opacity = "1";
-    document.getElementById("gallery-wrapper").style.visibility = "visible";
+    var gallery = document.getElementById("gallery");
+    var galleryWrap = document.getElementById("gallery-wrapper");
+    if(gallery.childNodes.length != 0) {
+        gallery.removeChild(gallery.firstChild);
+    }
+    galleryWrap.style.opacity = "1";
+    galleryWrap.style.visibility = "visible";
     document.getElementById("gallery-caption").innerHTML = cap;
+    
+    var img = new Image();
+    img.src = url;
+    var checkLoad = window.setInterval(function() {
+        if(img.complete) {
+            console.log("asdf");
+            gallery.appendChild(img);
+            window.clearInterval(checkLoad);
+        }
+    }, 100);
 }
 
 window.onload = function() {

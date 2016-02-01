@@ -53,27 +53,26 @@
                         <button class="basic-button" onclick="window.location.href='tv'">TVMonitor</button>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <h2>TJShares Redesign</h2>
-                <div class="description">
-                    <span style="display:block">Concept design to replace the current archaic-looking design of <a href="https://shares.tjhsst.edu">shares.tjhsst.edu</a></span>
-                    <button class="basic-button" onclick="window.location.href='https://willzhang05.github.io/TJShares'">TJShares</button>
+                <div class="card">
+                    <h2>TJShares Redesign</h2>
+                    <div class="description">
+                        <span style="display:block">Concept design to replace the current archaic-looking design of <a href="https://shares.tjhsst.edu">shares.tjhsst.edu</a></span>
+                        <button class="basic-button" onclick="window.location.href='https://willzhang05.github.io/TJShares'">TJShares</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2>Mandelbrot Set Generation</h2>
+                    <div class="render">
+                        <canvas height="250%" id="mandelbrot" width="250%"></canvas>
+                        <script src="scripts/mandelbrot.js"></script>
+                    </div>
+                    <div class="description">
+                        <button class="basic-button green" onclick="interval()">START</button>
+                        <button class="basic-button red" onclick="stopInterval()">STOP</button>
+                        <button class="basic-button blue" onclick="resetGen()">RESET</button>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <h2>Mandelbrot Set Generation</h2>
-                <div class="render">
-                    <canvas height="250%" id="mandelbrot" width="250%"></canvas>
-                    <script src="scripts/mandelbrot.js"></script>
-                </div>
-                <div class="description">
-                    <button class="basic-button green" onclick="interval()">START</button>
-                    <button class="basic-button red" onclick="stopInterval()">STOP</button>
-                    <button class="basic-button blue" onclick="resetGen()">RESET</button>
-                </div>
-            </div>
-        </div>
         <div id="footer-wrapper">
             <div id="footer">
                 <span>Inspired by Material Design.</span>
