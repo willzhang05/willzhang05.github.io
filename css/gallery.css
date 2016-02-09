@@ -1,36 +1,39 @@
 #gallery-wrapper {
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	visibility: hidden;
-	z-index: 10000;
-	background-color: #424242;
-	position: fixed;
-	-webkit-transition: all .4s ease;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10000;
+    background-color: #424242;
+    position: fixed;
+    -webkit-transition: all .4s ease;
     -moz-transition: all .4s ease;
     -ms-transition: all .4s ease;
     -o-transition: all .4s ease;
     transition: all .4s ease;
-	-webkit-box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-    -moz-box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    -webkit-box-shadow: 0 19px 38px rgba(0,0,0,0.30),0 15px 12px rgba(0,0,0,0.22);
+    -moz-box-shadow: 0 19px 38px rgba(0,0,0,0.30),0 15px 12px rgba(0,0,0,0.22);
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30),0 15px 12px rgba(0,0,0,0.22);
 }
+
 #gallery {
-	width: 100%;
-	height: 100%;
-	margin-top: -48px;
-	text-align: center;
-	background-size: 100%;
-	background-position: center center;
-	background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    margin-top: -48px;
+    text-align: center;
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
+
 #gallery > img {
-    max-width:100%; 
-    max-height:100%;
-    margin:auto;
-    display:block;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    display: block;
 }
+
 #load-more {
     width: calc(100% - 50px);
     height: 96px;
@@ -38,15 +41,18 @@
     margin: 25px 0;
     font-size: 18px;
     background-color: #000;
-    color: white;
-    opacity: 0.1;
+    color: #fff;
+    opacity: .1;
 }
+
 #load-more:hover {
-    opacity: 0.3;
+    opacity: .3;
 }
+
 #load-more:active {
-    opacity: 0.5;
+    opacity: .5;
 }
+
 .image-card {
     position: relative;
     display: inline-block;
@@ -64,15 +70,17 @@
     -o-transition: all .3s ease;
     transition: all .3s ease;
     background-color: #eee;
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
 }
+
 .image-card:hover {
-    -webkit-box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-    -moz-box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
+    -webkit-box-shadow: 0 19px 38px rgba(0,0,0,0.30),0 15px 12px rgba(0,0,0,0.22);
+    -moz-box-shadow: 0 19px 38px rgba(0,0,0,0.30),0 15px 12px rgba(0,0,0,0.22);
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30),0 15px 12px rgba(0,0,0,0.22);
 }
+
 .info-overlay {
     width: 100%;
     height: 100%;
@@ -83,44 +91,169 @@
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
     -o-transition: all .3s ease;
-    transition: all .3s ease
+    transition: all .3s ease;
 }
+
 .info-overlay:hover {
-    opacity: 0.5
+    opacity: .5;
 }
+
 .info-text {
-	height: 40px;
-	padding: 4px;
-	margin-top: calc(100% - 48px);
-    color: #eee
+    height: 40px;
+    padding: 4px;
+    margin-top: calc(100% - 48px);
+    color: #eee;
 }
+
 .exit-button {
-	float: left;
-	width: 48px;
-	height: inherit;
-	background-color: rgba(0, 0, 0, .5);
-	background-image: url('../icons/ic_close_white_48px.svg');
-	background-size: 45% 45%;
+    float: left;
+    width: 48px;
+    height: inherit;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.5);
+    background-image: url(../icons/ic_close_white_48px.svg);
+    background-size: 45% 45%;
     background-repeat: no-repeat;
-    background-position: center
+    background-position: center;
 }
-.exit-button:hover {
-	background-color: #F44336;
-	color: #fff
+
+.exit-button:active {
+    background-color: #424242;
 }
+
 .window-bar {
-	height: 48px
+    height: 48px;
+    background-color: #000;
 }
+
 .window-label {
-	float:left;
-	width: calc(100% - 48px);
-	height: inherit;
-	line-height: 48px
+    float: left;
+    width: calc(100% - 48px);
+    height: inherit;
+    line-height: 48px;
 }
+
 #gallery-caption {
-	padding-right: 48px;
-	font-size: 20px;
-	color: #fff;
-	background-color: #000;
-	opacity: 0.5;
+    padding-right: 48px;
+    font-size: 20px;
+    color: #fff;
+    opacity: .5;
+}
+
+/**
+ * Google Material Design Preloader
+ *
+ * CSS animated SVG implementation of the Google Material Design preloader
+ *
+ * License: MIT
+ * Author: Rudi Theunissen (rudolf.theunissen@gmail.com)
+ * Version: 1.1.0
+ */
+.md-preloader {
+    font-size: 0;
+    display: inline-block;
+    -webkit-animation: outer 6600ms linear infinite;
+    animation: outer 6600ms linear infinite;
+    margin: 15% 25%;
+    z-index: 1;
+}
+
+.md-preloader::before {
+    opacity: 0;
+    z-index: -1;
+}
+
+.md-preloader svg {
+    -webkit-animation: inner 1320ms linear infinite;
+    animation: inner 1320ms linear infinite;
+}
+
+.md-preloader svg circle {
+    fill: none;
+    stroke: #448aff;
+    stroke-linecap: square;
+    -webkit-animation: arc 1320ms cubic-bezier(0.8,0,0.4,0.8) infinite;
+    animation: arc 1320ms cubic-bezier(0.8,0,0.4,0.8) infinite;
+}
+
+@-webkit-keyframes outer {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes outer {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes inner {
+    0% {
+        -webkit-transform: rotate(-100.8deg);
+        transform: rotate(-100.8deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+}
+
+@keyframes inner {
+    0% {
+        -webkit-transform: rotate(-100.8deg);
+        transform: rotate(-100.8deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+}
+
+@-webkit-keyframes arc {
+    0% {
+        stroke-dasharray: 1 210.48670779px;
+        stroke-dashoffset: 0;
+    }
+
+    40% {
+        stroke-dasharray: 151.55042961px,210.48670779px;
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dasharray: 1 210.48670779px;
+        stroke-dashoffset: -151.55042961px;
+    }
+}
+
+@keyframes arc {
+    0% {
+        stroke-dasharray: 1 210.48670779px;
+        stroke-dashoffset: 0;
+    }
+
+    40% {
+        stroke-dasharray: 151.55042961px,210.48670779px;
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dasharray: 1 210.48670779px;
+        stroke-dashoffset: -151.55042961px;
+    }
 }

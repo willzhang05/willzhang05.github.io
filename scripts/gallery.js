@@ -1,12 +1,19 @@
 "use strict"
-var string = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=ae976304a535e7ed8ff2100c1d5b2dc7&photoset_id=72157659451270924&user_id=126785613%40N04&extras=original_format&format=json&api_key=9f46232676650675ddd2cc7bf3ca979d",
-    script = document.createElement("script");
-script.src = string;
-document.getElementById("wrapper").appendChild(script);
-var linkArr = [],
+var script = document.createElement("script"),
+    load = document.createElement("button"),
+    linkArr = [],
     capArr = [],
     imgMod = [],
     imgNum = 0;
+
+script.src = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=ae976304a535e7ed8ff2100c1d5b2dc7&photoset_id=72157659451270924&user_id=126785613%40N04&extras=original_format&format=json&api_key=9f46232676650675ddd2cc7bf3ca979d";
+document.getElementById("wrapper").appendChild(script);
+load.id = "load-more";
+load.onclick = function() {
+    loadMore()
+};
+load.innerHTML = "Load More...";
+document.getElementById("content").appendChild(load);
 
 function jsonFlickrApi(data) {
     var photos = data.photoset.photo;
@@ -35,20 +42,24 @@ function loadMore() {
 }
 
 function expandImage(url, cap) {
-    var gallery = document.getElementById("gallery");
-    var galleryWrap = document.getElementById("gallery-wrapper");
-    if(gallery.childNodes.length != 0) {
-        gallery.removeChild(gallery.firstChild);
-    }
+    var gallery = document.getElementById("gallery"),
+        galleryWrap = document.getElementById("gallery-wrapper");
+    gallery.innerHTML = "";
     galleryWrap.style.opacity = "1";
     galleryWrap.style.visibility = "visible";
     document.getElementById("gallery-caption").innerHTML = cap;
-    
+
     var img = new Image();
     img.src = url;
+    var preload = document.createElement("div");
+    preload.className = "md-preloader";
+    preload.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="75" width="75" viewbox="0 0 75 75"><circle cx="37.5" cy="37.5" r="33.5" stroke-width="8"/></svg>';
     var checkLoad = window.setInterval(function() {
-        if(img.complete) {
-            console.log("asdf");
+        if (gallery.firstChild == null) {
+            gallery.appendChild(preload);
+        }
+        if (img.complete) {
+            gallery.innerHTML = "";
             gallery.appendChild(img);
             window.clearInterval(checkLoad);
         }
@@ -56,7 +67,7 @@ function expandImage(url, cap) {
 }
 
 window.onload = function() {
-    for (var i = imgNum; i < 12; i++) {
+    for (var i = imgNum; i < 4 * Math.floor((window.innerWidth - 296) / 325); i++) {
         imgMod.push(new imgModule(linkArr[linkArr.length - i - 1], capArr[capArr.length - i - 1]));
         imgNum++;
     }
