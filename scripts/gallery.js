@@ -4,7 +4,8 @@ var script = document.createElement("script"),
     linkArr = [],
     capArr = [],
     imgMod = [],
-    imgNum = 0;
+    imgNum = 0,
+    zoom = false;
 
 script.src = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=ae976304a535e7ed8ff2100c1d5b2dc7&photoset_id=72157659451270924&user_id=126785613%40N04&extras=original_format&format=json&api_key=9f46232676650675ddd2cc7bf3ca979d";
 document.getElementById("wrapper").appendChild(script);
@@ -26,15 +27,16 @@ function jsonFlickrApi(data) {
 }
 
 function loadMore() {
-    var temp = imgNum;
-    if (temp + 4 > linkArr.length) {
+    var temp = imgNum,
+    	loadNum = (2 * Math.floor((window.innerWidth - 296) / 325)) == 0 ? 2 : (2 * Math.floor((window.innerWidth - 296) / 325));
+    if (temp + loadNum > linkArr.length) {
         for (var i = imgNum; i < linkArr.length; i++) {
             imgMod.push(new imgModule(linkArr[linkArr.length - i - 1], capArr[capArr.length - i - 1]));
             imgNum++;
         }
         document.getElementById("load-more").style.display = "none";
     } else {
-        for (var i = imgNum; i < temp + 4; i++) {
+        for (var i = imgNum; i < temp + loadNum; i++) {
             imgMod.push(new imgModule(linkArr[linkArr.length - i - 1], capArr[capArr.length - i - 1]));
             imgNum++;
         }
@@ -67,10 +69,16 @@ function expandImage(url, cap) {
 }
 
 window.onload = function() {
-    for (var i = imgNum; i < 4 * Math.floor((window.innerWidth - 296) / 325); i++) {
+	var initNum = (Math.floor((window.innerWidth - 296) / 325)) == 0 ? 1 : (2 * Math.floor((window.innerWidth - 296) / 325));
+    for (var i = imgNum; i < 4 * initNum; i++) {
         imgMod.push(new imgModule(linkArr[linkArr.length - i - 1], capArr[capArr.length - i - 1]));
         imgNum++;
     }
+}
+document.getElementById("gallery").onclick = function() {
+	/*if(zoom) {		
+	 this.childNodes[0].style.zoom = "200%";
+	 */
 }
 
 var imgModule = class {
