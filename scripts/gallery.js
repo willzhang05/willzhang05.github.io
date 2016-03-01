@@ -5,7 +5,8 @@ var script = document.createElement("script"),
     capArr = [],
     imgMod = [],
     imgNum = 0,
-    zoom = false;
+    isZoom = false,
+    isLoad = false;
 
 script.src = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=ae976304a535e7ed8ff2100c1d5b2dc7&photoset_id=72157659451270924&user_id=126785613%40N04&extras=original_format&format=json&api_key=9f46232676650675ddd2cc7bf3ca979d";
 document.getElementById("wrapper").appendChild(script);
@@ -57,10 +58,11 @@ function expandImage(url, cap) {
     preload.className = "md-preloader";
     preload.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="75" width="75" viewbox="0 0 75 75"><circle cx="37.5" cy="37.5" r="33.5" stroke-width="8"/></svg>';
     var checkLoad = window.setInterval(function() {
+        isLoad = img.complete;
         if (gallery.firstChild == null) {
             gallery.appendChild(preload);
         }
-        if (img.complete) {
+        if (isLoad) {
             gallery.innerHTML = "";
             gallery.appendChild(img);
             window.clearInterval(checkLoad);
@@ -75,10 +77,19 @@ window.onload = function() {
         imgNum++;
     }
 }
-document.getElementById("gallery").onclick = function() {
-	/*if(zoom) {		
-	 this.childNodes[0].style.zoom = "200%";
-	 */
+document.getElementById("gallery").ondblclick = function() {
+    if(isLoad) {
+        if(isZoom) {
+            this.style.transform = "scale(1)";
+            this.style.top = "0px";
+            this.style.left = "0px";
+        } else {
+            this.style.transform = "scale(2)";
+            /*this.style.top = 2 * event.y + "px";
+            this.style.left = 2 * event.x + "px";*/     
+        }
+        isZoom = !isZoom;
+    }
 }
 
 var imgModule = class {
