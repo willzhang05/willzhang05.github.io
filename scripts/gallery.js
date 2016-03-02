@@ -11,9 +11,6 @@ var script = document.createElement("script"),
 script.src = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=ae976304a535e7ed8ff2100c1d5b2dc7&photoset_id=72157659451270924&user_id=126785613%40N04&extras=original_format&format=json&api_key=9f46232676650675ddd2cc7bf3ca979d";
 document.getElementById("wrapper").appendChild(script);
 load.id = "load-more";
-load.onclick = function() {
-    loadMore()
-};
 load.innerHTML = "Load More...";
 document.getElementById("content").appendChild(load);
 
@@ -25,6 +22,7 @@ function jsonFlickrApi(data) {
         ]);
         capArr.push(photos[i].title);
     }
+    load.onclick = function() { loadMore() };
 }
 
 function loadMore() {
@@ -48,6 +46,7 @@ function expandImage(url, cap) {
     var gallery = document.getElementById("gallery"),
         galleryWrap = document.getElementById("gallery-wrapper");
     gallery.innerHTML = "";
+    gallery.style.visibility = "visible";
     galleryWrap.style.opacity = "1";
     galleryWrap.style.visibility = "visible";
     document.getElementById("gallery-caption").innerHTML = cap;
@@ -65,6 +64,7 @@ function expandImage(url, cap) {
         if (isLoad) {
             gallery.innerHTML = "";
             gallery.appendChild(img);
+            gallery.style.cursor = "zoom-in";
             window.clearInterval(checkLoad);
         }
     }, 100);
@@ -77,13 +77,15 @@ window.onload = function() {
         imgNum++;
     }
 }
-document.getElementById("gallery").ondblclick = function() {
+gallery.ondblclick = function() {
     if(isLoad) {
         if(isZoom) {
+            gallery.style.cursor = "zoom-in";
             this.style.transform = "scale(1)";
             this.style.top = "0px";
             this.style.left = "0px";
         } else {
+            gallery.style.cursor = "zoom-out";
             this.style.transform = "scale(2)";
             /*this.style.top = 2 * event.y + "px";
             this.style.left = 2 * event.x + "px";*/     
