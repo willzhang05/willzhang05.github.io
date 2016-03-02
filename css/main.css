@@ -242,8 +242,7 @@ button {
 #content {
     width: 100%;
 	position: relative;
-    display: flex;
-    flex-wrap: wrap;
+    display: block;
 	top: -150px;
 	margin-bottom: -130px;
 }
@@ -295,10 +294,11 @@ button {
 .card {
     position: relative;
     overflow: hidden;
-    width: calc(100% - 60px);
+    width: calc(100% - 75px);
+    max-width: 1920px;
     margin: 15px;
     padding: 15px;
-	display: inline-block;
+    display: inline-block;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
