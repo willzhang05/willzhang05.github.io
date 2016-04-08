@@ -62,6 +62,15 @@ a {
     text-decoration: underline;
     color: #000
 }
+#logo {
+    width: 200px;
+    height: 200px;
+    background-image: url('/images/logo.svg');
+    background-size: 120%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: calc((100% - 200px) / 2);
+}
 button {
     font-family: Roboto, Helvetica Neue, Helvetica, sans-serif;
     display: inline-block;
