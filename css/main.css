@@ -72,7 +72,6 @@ a {
     margin-left: calc((100% - 200px) / 2);
 }
 button {
-    font-family: Roboto, Helvetica Neue, Helvetica, sans-serif;
     display: inline-block;
     cursor: pointer;
     -webkit-transition: all .2s ease;
