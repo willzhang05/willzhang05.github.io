@@ -94,8 +94,7 @@ gallery.ondblclick = function() {
     }
 }
 
-var imgModule = class {
-    constructor(url, cap) {
+function imgModule(url, cap) {
         this.url = url[0];
         this.orig = url[1];
         var parent = document.getElementById("content"),
@@ -116,5 +115,4 @@ var imgModule = class {
         bar.appendChild(label);
         imgCard.appendChild(mod);
         parent.insertBefore(imgCard, document.getElementById("load-more"));
-    }
 }
