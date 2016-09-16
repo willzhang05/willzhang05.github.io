@@ -92,25 +92,25 @@ button {
     padding: 0;
 	text-align: center;
 	color: #fff;
-    background-color: transparent;
+    background: transparent;
 }
 .menu-buttons:hover {
-    background-color: #1e88e5
+    background: #1e88e5
 }
 .menu-buttons:active {
-    background-color: #1976d2
+    background: #1976d2
 }
 .menu-buttons2 {
     font-size: 14px;
     width: 100%;
     height: 100px;
-    background-color: #eee
+    background: #eee
 }
 .menu-buttons2:hover {
-    background-color: #e0e0e0
+    background: #e0e0e0
 }
 .menu-buttons2:active {
-    background-color: #bdbdbd
+    background: #bdbdbd
 }
 .circle-button {
     font-size: 16px;
@@ -118,7 +118,7 @@ button {
     height: 55px;
     color: #fff;
     border-radius: 50%;
-    background-color: #eee;
+    background: #eee;
     -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
     -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26)
@@ -133,41 +133,44 @@ button {
     height: 50px;
     margin-top: 15px;
     border-radius: 5px 5px 5px 5px;
-    background-color: #eee;
-	font-size: 16px;
+	background: #fff;
+    font-size: 16px;
+    -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
+    -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26)
 }
 .basic-button:hover {
-    background-color: #e0e0e0;
+    background: #e0e0e0;
 }
 .basic-button:active {
-    background-color: #bdbdbd
+    background: #bdbdbd
 }
 .red {
-    background-color: #f44336
+    background: #f44336
 }
 .red:hover {
-    background-color: #e53935
+    background: #e53935
 }
 .red:active {
-    background-color: #d32f2f
+    background: #d32f2f
 }
 .blue {
-    background-color: #2196f3
+    background: #2196f3
 }
 .blue:hover {
-    background-color: #1e88e5
+    background: #1e88e5
 }
 .blue:active {
-    background-color: #1976d2
+    background: #1976d2
 }
 .green {
-    background-color: #4caf50
+    background: #4caf50
 }
 .green:hover {
-    background-color: #43a047
+    background: #43a047
 }
 .green:active {
-    background-color: #388e3c
+    background: #388e3c
 }
 #wrapper {
     position: relative;
@@ -175,7 +178,7 @@ button {
     overflow: hidden;
     width: 100%;
     min-height: 100%;
-    background-color: #424242
+    background: #424242
 }
 #sidebar-wrapper {
     width: 200px;
@@ -187,17 +190,18 @@ button {
     z-index: 101;
     -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
     -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26) -webkit-transition: all .4s ease;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
+    -webkit-transition: all .4s ease;
     -moz-transition: all .4s ease;
     -ms-transition: all .4s ease;
     -o-transition: all .4s ease;
     transition: all .4s ease;
-    background-color: #eee;
+    background: #eee;
 }
 #sidebar {
     width: 200px;
     height: 100%;
-    background-color: #eee;
+    background: #eee;
 }
 #menu {
     position: fixed;
@@ -211,7 +215,7 @@ button {
     vertical-align: middle;
     z-index: 100;
     overflow: hidden;
-    background-color: #2196f3;
+    background: #2196f3;
     -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
     -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26)
@@ -231,17 +235,17 @@ button {
     width: 100%;
     height: 100%;
     max-height: 800px;
-    background-image: url('../images/blurredsky.jpg');
+    background-image: url('../images/bg.jpg');
     background-repeat: no-repeat;
-    background-position: 0px 0px;
-    background-size: 200%
+    background-position: 0px -200px;
+    background-size: 100%
 }
 #content-wrapper {
     width: 100%;
     min-height: calc(100vh - 498px);
     margin-bottom: 150px;
     text-align: center;
-    background-color: #424242;
+    background: #424242;
     -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
     -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26)
@@ -272,7 +276,7 @@ button {
     left: 0;
     width: 100%;
     height: 150px;
-    background-color: #212121;
+    background: #212121;
     -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
     -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26)
@@ -298,6 +302,9 @@ button {
     clear: none;
     padding: 10px
 }
+.description {
+    margin-bottom: 15px
+}
 .card {
     position: relative;
     overflow: hidden;
@@ -311,7 +318,7 @@ button {
     -ms-transition: all .3s ease;
     -o-transition: all .3s ease;
     transition: all .3s ease;
-    background-color: #eee;
+    background: #fff;
     -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .1);
     -moz-box-shadow: 0 0 6px rgba(0, 0, 0, .1);
     box-shadow: 0 0 6px rgba(0, 0, 0, .1)
