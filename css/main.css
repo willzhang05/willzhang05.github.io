@@ -293,7 +293,7 @@ button {
     max-height: 800px;
     background-image: url('../images/bg.jpg');
     background-repeat: no-repeat;
-    background-position: 0px -200px;
+    background-position: 0px 0px;
     background-size: 100%
 }
 #content-wrapper {
