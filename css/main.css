@@ -74,11 +74,11 @@ button {
     font-family: Roboto, Helvetica Neue, Helvetica, sans-serif;
     display: inline-block;
     cursor: pointer;
-    -webkit-transition: all .1s ease;
-    -moz-transition: all .1s ease;
-    -ms-transition: all .1s ease;
-    -o-transition: all .1s ease;
-    transition: all .1s ease;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
     border: none;
     outline: 0
 }
@@ -92,14 +92,14 @@ button {
     position: absolute;
     z-index: 1;
 	text-align: center;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.3);
 }
 .menu-buttons:hover {
     height: 53vh;
     width: 53vh;
 }
 .menu-buttons:active {
-    background: rgba(0,0,0,0.9);
+
 }
 
 .menu-buttons:nth-child(0n+1) {
@@ -250,6 +250,7 @@ button {
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
+    background: #616161;
 }
 #menu {
     position: relative;
