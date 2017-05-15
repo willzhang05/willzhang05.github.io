@@ -56,7 +56,7 @@ footer {
     right: 0;
     content: '';
     display: block;
-    background-image: url('../images/bg1.jpg');
+    background-image: url('../images/bg1-min.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
