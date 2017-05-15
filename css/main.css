@@ -18,6 +18,19 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     transition: all .2s ease;
 }
 
+a {
+    color: #1976D2;
+    text-decoration: none;
+}
+
+span > a:hover {
+    color: #616161;
+}
+
+span > a:active {
+    color: #212121;
+}
+
 body {
     overflow: hidden; /*IMPORTANT TO CHANGE IF EXPANDING*/
     width: 100%;
@@ -69,6 +82,7 @@ section {
 button > a {
     text-decoration: none;
     color: #000;
+    font-size: 1em;
 }
 
 #desc > h1 {
