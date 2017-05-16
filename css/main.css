@@ -79,12 +79,6 @@ section {
     height: 100vh;
 }
 
-button > a {
-    text-decoration: none;
-    color: #000;
-    font-size: 1em;
-}
-
 #desc > h1 {
     font-size: 3em;
     margin-top: 0.5em;
@@ -104,7 +98,13 @@ button > a {
     clear: both;
 }
 
-#resume {
+#resume a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1em;
+}
+
+#resume button {
     cursor: pointer;
     font-size: 1em;
     width: 100px;
@@ -114,11 +114,11 @@ button > a {
     border: none;
     display: inline-block;
 }
-#resume:hover {
+#resume:hover button {
     border: 2px solid #616161;
     background-color: #e0e0e0;
 }
-#resume:active {
+#resume:active button {
     background-color: #9e9e9e;
 }
 
