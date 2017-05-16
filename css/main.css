@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 /*http://meyerweb.com/eric/tools/css/reset/*/
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+html,body,div,span,button,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
     font: inherit;
     font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 100%;
@@ -42,7 +42,7 @@ body {
 footer {
     position: absolute;
     width: 100vw;
-    height: 30px;
+    height: 25px;
     bottom: 0;
     left: 0;
     display: inline-block;
@@ -61,7 +61,7 @@ footer {
     z-index: 1;
 }
 
-#wrapper:after {
+#wrapper:before {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -69,8 +69,10 @@ footer {
     right: 0;
     content: '';
     display: block;
-    background-image: url('../images/bg1-min.jpg');
+    background-image: url('../images/bg3-min.jpg');
     background-size: cover;
+    background-position-x: center;
+    background-position-y: -50vh;
     background-repeat: no-repeat;
     z-index: -1;
 }
@@ -148,5 +150,5 @@ section {
     vertical-align: middle;
     color: #000;
     background-color: #fff;
-    opacity: 0.8;
+    opacity: 0.9;
 }
