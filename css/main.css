@@ -133,7 +133,7 @@ section {
     background-color: #fff;
     border: none;
     display: inline-block;
-    margin: 0   0 1em 0;
+    margin: 0 0 1em 0;
 }
 #resume:hover button {
     border: 2px solid #616161;
@@ -179,10 +179,11 @@ section {
         height: 80vh;
     }
 }
-@media screen and (max-width: 320px) {
+
+@media screen and (max-width: 335px) {
     #desc {
-        top: 5vh;
-        height: 90vh;
+        top: 2.5vh;
+        height: 95vh;
         overflow-y: auto;
     }
 }
