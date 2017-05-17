@@ -9,23 +9,48 @@ var script = document.createElement("script"),
     isLoad = false;
 
 script.src = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=ae976304a535e7ed8ff2100c1d5b2dc7&photoset_id=72157659451270924&user_id=126785613%40N04&extras=original_format&format=json&api_key=9f46232676650675ddd2cc7bf3ca979d";
-document.getElementById("wrapper").appendChild(script);
-load.id = "load-more";
-load.innerHTML = "Load More...";
-document.getElementById("content").appendChild(load);
+var wrapper = document.getElementById("wrapper");
+wrapper.appendChild(script);
+//load.id = "load-more";
+//load.innerHTML = "Load More...";
+//document.getElementById("content").appendChild(load);
+var left = document.querySelectorAll("button.flip.left")[0];
+var right = document.querySelectorAll("button.flip.right")[0];
 
 function jsonFlickrApi(data) {
     var photos = data.photoset.photo;
-    for (var i = 0; i < photos.length; i++) {
-        linkArr.push(["https://farm" + photos[i].farm + ".staticflickr.com/" + photos[i].server + "/" + photos[i].id + "_" + photos[i].secret + "_z.jpg",
+    /*for (var i = 0; i < photos.length; i++) {
+        linkArr.push(["https://farm" + photos[i].farm + ".staticflickr.com/" + photos[i].server + "/" + photos[i].id + "_" + photos[i].secret + "_s.jpg",
             "https://farm" + photos[i].farm + ".staticflickr.com/" + photos[i].server + "/" + photos[i].id + "_" + photos[i].originalsecret + "_o." + photos[i].originalformat
         ]);
         capArr.push(photos[i].title);
+    }*/
+    linkArr = [["./images/bg3-min.jpg", "./images/bg3.jpg"], ["./images/bg1-min.jpg", "./images/bg1.jpg"], ["./images/bg2-min.jpg", "./images/bg2.jpg"], ["./images/bg4-min.jpg", "./images/bg4.jpg"]];
+    left.onclick = function() {
+        if(imgNum > 0) {
+            imgNum--;
+        }
+        var bgImg = new Image();
+        bgImg.onload = function() {
+            wrapper.style.backgroundImage = "url('" + bgImg.src + "')";
+        }
+        bgImg.src = linkArr[imgNum][0];
     }
-    load.onclick = function() { loadMore() };
+    right.onclick = function() {
+        if(imgNum < linkArr.length - 1) {
+            imgNum++;
+        }
+        var bgImg = new Image();
+        bgImg.onload = function() {
+            wrapper.style.backgroundImage = "url('" + bgImg.src + "')";
+        }
+        bgImg.src = linkArr[imgNum][0];
+        /*sheet.addRule("#wrapper:before","url('" + linkArr[imgNum][1] + "')")
+        sheet.insertRule("#wrapper:before { url('" + linkArr[imgNum][1] + "')", 0);*/
+    }
 }
 
-function loadMore() {
+/*function loadMore() {
     var temp = imgNum,
     	loadNum = (2 * Math.floor((window.innerWidth - 296) / 325)) == 0 ? 2 : (2 * Math.floor((window.innerWidth - 296) / 325));
     if (temp + loadNum > linkArr.length) {
@@ -40,9 +65,9 @@ function loadMore() {
             imgNum++;
         }
     }
-}
+}*/
 
-function expandImage(url, cap) {
+/*function expandImage(url, cap) {
     var gallery = document.getElementById("gallery"),
         galleryWrap = document.getElementById("gallery-wrapper");
     gallery.innerHTML = "";
@@ -68,16 +93,17 @@ function expandImage(url, cap) {
             window.clearInterval(checkLoad);
         }
     }, 100);
-}
+}*/
 
-window.onload = function() {
+/*window.onload = function() {
 	var initNum = (Math.floor((window.innerWidth - 296) / 325)) == 0 ? 1 : (2 * Math.floor((window.innerWidth - 296) / 325));
     for (var i = imgNum; i < 4 * initNum; i++) {
         imgMod.push(new imgModule(linkArr[linkArr.length - i - 1], capArr[capArr.length - i - 1]));
         imgNum++;
     }
-}
-gallery.ondblclick = function() {
+}*/
+
+/*gallery.ondblclick = function() {
     if(isLoad) {
         if(isZoom) {
             gallery.style.cursor = "zoom-in";
@@ -86,15 +112,15 @@ gallery.ondblclick = function() {
             this.style.left = "0px";
         } else {
             gallery.style.cursor = "zoom-out";
-            this.style.transform = "scale(2)";
+            this.style.transform = "scale(2)";*/
             /*this.style.top = 2 * event.y + "px";
             this.style.left = 2 * event.x + "px";*/     
-        }
+        /*}
         isZoom = !isZoom;
     }
-}
+}*/
 
-function imgModule(url, cap) {
+/*function imgModule(url, cap) {
         this.url = url[0];
         this.orig = url[1];
         var parent = document.getElementById("content"),
@@ -115,4 +141,4 @@ function imgModule(url, cap) {
         bar.appendChild(label);
         imgCard.appendChild(mod);
         parent.insertBefore(imgCard, document.getElementById("load-more"));
-}
+}*/
