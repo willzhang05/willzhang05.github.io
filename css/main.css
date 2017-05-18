@@ -38,12 +38,21 @@ button.flip > i {
     background-size: cover;
 }
 
+button.expand > i {
+
+}
+
 i.left {
     background-image: url("../icons/ic_keyboard_arrow_left_black_48px.svg");
 }
 
 i.right {
     background-image: url("../icons/ic_keyboard_arrow_right_black_48px.svg");
+    
+}
+
+i.expand {
+    background-image: url("../icons/ic_expand_less_white_48px.svg");
 }
 
 button.flip {
@@ -71,6 +80,15 @@ button.flip:hover {
 
 button.flip:active {
     background-color: rgba(255, 255, 255, 0.9);
+}
+
+button.expand {
+    cursor: pointer;
+    position: absolute;
+    height: 6vh;
+    width: 4vh;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 span > a:hover {
@@ -151,7 +169,7 @@ section {
 #desc > span {
     width: calc(100% - 1em);
     padding: 0 0.5em;
-    font-size: 1.3em;
+    font-size: 1.2em;
     display: inline-block;
     margin: 0.5em 0;
     clear: both;
@@ -183,7 +201,7 @@ section {
 
 #resume button {
     cursor: pointer;
-    font-size: 1.1em;
+    font-size: 1.2em;
     width: 150px;
     height: 50px;
     outline: none;
@@ -198,7 +216,7 @@ section {
     background-color: #1565C0;
 }
 #resume:active button {
-    font-size: 0.9em;
+    font-size: 1.1em;
 }
 
 #desc:before {
@@ -241,6 +259,9 @@ section {
 }
 
 @media screen and (max-width: 375px) {
+    button.flip {
+        display: none;
+    }
     section {
         height: 100vh;
     }
