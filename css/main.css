@@ -166,7 +166,6 @@ section {
     margin: 0.5em 0;
 }
 
-
 #desc > span {
     width: calc(100% - 1em);
     padding: 0 0.5em;
@@ -243,7 +242,7 @@ section {
     top: 20vh;
     left: 15vw;
     width: 70vw;
-    min-height: 60vh;/*calc(10.6em + 50px);*/
+    min-height: 60vh; /*calc(10.6em + 50px);*/
     text-align: center;
     vertical-align: middle;
     color: #000;
@@ -260,7 +259,7 @@ section {
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
     button.flip {
         display: none;
     }
@@ -277,7 +276,6 @@ section {
         height: 100vh;
     }
 }
-
 
 @media screen and (max-width: 225px) {
     #desc {
