@@ -31,6 +31,28 @@ a {
     text-decoration: none;
 }
 
+button.social {
+    cursor: pointer;
+    outline: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    margin: 0 6px;
+    background-color: transparent;
+}
+
+button.social#github {
+    background: url('../icons/github.png');
+    background-size: cover;
+}
+button.social#keybase {
+    background: url('../icons/keybase.png');
+    background-size: cover;
+}
+button.social#flickr {
+    background: url('../icons/flickr.png');
+    background-size: cover;
+}
 button.flip > i {
     height: 3vh;
     width: 3vh;
@@ -259,7 +281,7 @@ section {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 480px), screen and (max-height: 420px) {
     button.flip {
         display: none;
     }
@@ -277,7 +299,7 @@ section {
     }
 }
 
-@media screen and (max-width: 225px) {
+@media screen and (max-width: 225px), screen and (max-height: 420px) {
     #desc {
         overflow-y: auto;
     }
