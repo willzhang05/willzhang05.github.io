@@ -194,8 +194,10 @@ section {
 }
 
 #desc > h2 {
+    width: calc(100% - 1em);
     font-size: 1.2em;
-    margin: 0.5em 0;
+    padding: 0.5em 0;
+    display: inline-block;
 }
 
 #desc > span {
