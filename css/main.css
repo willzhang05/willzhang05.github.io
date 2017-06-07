@@ -226,6 +226,10 @@ section {
     }
 }*/
 
+#contact {
+    margin: 1em 0 0 0;
+}
+
 #resume a {
     text-decoration: none;
     color: #000;
@@ -243,7 +247,6 @@ section {
     background-color: #1976D2;
     border: none;
     display: inline-block;
-    margin: 0 0 1em 0;
 }
 
 #resume:hover button {
