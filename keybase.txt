@@ -1,63 +1,76 @@
-
-        ://keybase.io/willzhang05
+==================================================================
+https://keybase.io/willzhang05
 --------------------------------------------------------------------
 
 I hereby claim:
 
-  * I am an admin of https://wzhang.me
+  * I am an admin of https://willzhang05.github.io
   * I am willzhang05 (https://keybase.io/willzhang05) on keybase.
   * I have a public key with fingerprint 38DA 73E3 5989 6431 22A3  2784 C0BA 3A2B 5CF4 10DC
 
 To do so, I am signing this object:
 
 {
-    "body": {
-        "key": {
-            "eldest_kid": "0101755313d6683a119a444d74b79f45e76a32264aed4f586912d1fcbaa9cd2449ce0a",
-            "fingerprint": "38da73e35989643122a32784c0ba3a2b5cf410dc",
-            "host": "keybase.io",
-            "key_id": "c0ba3a2b5cf410dc",
-            "kid": "0101755313d6683a119a444d74b79f45e76a32264aed4f586912d1fcbaa9cd2449ce0a",
-            "uid": "817dcc62e0267a6e5cbc7c8568866f19",
-            "username": "willzhang05"
-        },
-        "service": {
-            "hostname": "wzhang.me",
-            "protocol": "https:"
-        },
-        "type": "web_service_binding",
-        "version": 1
+  "body": {
+    "key": {
+      "eldest_kid": "0101755313d6683a119a444d74b79f45e76a32264aed4f586912d1fcbaa9cd2449ce0a",
+      "fingerprint": "38da73e35989643122a32784c0ba3a2b5cf410dc",
+      "host": "keybase.io",
+      "key_id": "c0ba3a2b5cf410dc",
+      "kid": "0101755313d6683a119a444d74b79f45e76a32264aed4f586912d1fcbaa9cd2449ce0a",
+      "uid": "817dcc62e0267a6e5cbc7c8568866f19",
+      "username": "willzhang05"
     },
-    "ctime": 1474053216,
-    "expire_in": 157680000,
-    "prev": "120ab30646d36960320e3ea1be30e621aefe1176acf92e1ad75716ac5690516b",
-    "seqno": 12,
-    "tag": "signature"
+    "merkle_root": {
+      "ctime": 1501684397,
+      "hash_meta": "cde0f4eff00848acc5a1a8381055b4976af9cfe6cdf4ad2410d20574199a1f17",
+      "seqno": 1297833
+    },
+    "revoke": {
+      "sig_ids": [
+        "8aec995cf42b1bf1531f58c339cdc07ed80f4031166ca3ad1a9b1e2fb336ee100f"
+      ]
+    },
+    "service": {
+      "hostname": "willzhang05.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1501684398,
+  "expire_in": 157680000,
+  "prev": "d832ad6249d2dea0bb9932416d8a6958a49080de6f34a278729a687874a145ee",
+  "seqno": 18,
+  "tag": "signature"
 }
 
 which yields the signature:
 
 -----BEGIN PGP MESSAGE-----
-Version: Keybase OpenPGP v2.0.56
+Version: Keybase OpenPGP v2.0.73
 Comment: https://keybase.io/crypto
 
-yMIoAnicrZJbSBRRGMfXykgpEushDROnzMhN58zlzMxSlnYxQSIQTGF1OzNzZp1c
-Z7bdcfP6JKhkUWahFULZRREDHwysDLz0YlchEwKLyCQNpAtlN5HOLPnWY+flnO87
-///vfN/HebBmuSM6YvCuK9X9NWYy4tFQW7njyOS+o9WUbKqVlKuaKsXhDftUHLQ8
-pbpKuSga0EDgeRawKoQiiwCQEMdxqsDJgqRxPBYgYhkGcgirnMaLUAKMCjRFRkhS
-VIbjJAXTiHJSmm54ccAf0A2LYFlRRQKLWV4SJcixgGEIRRA5hZYRixiZVzQO0KpC
-jCVm0HaQ4mQUxGm6SXIk8ITL+4f+P9ddHsaJQFAVBTKYZqCAIOYVWREUkYeiCKEG
-JFsYxAEDlWGiPqH7fFUlyPDSPFXrpMhFSFewPVu7mSVRWJFGzk7KHzAtUzF9JF1i
-Wf6gy7ZZlf6wDsuevwSPrBsqmSNxhHAgqJsG5QJEqVi6jQScwNE8ywDopHCFXw9g
-j24reAGKNFn2OzhEkIChkczSkIMqCyVIswyNWYyAjFkaQwYgrGEAyIQUTWIwQKrA
-C4BEPJRoHkCZsns6bpiEzZA6kZcwg7rXQFZ5AFO1w4PuFY6IaMfKyGX2B3NER8Us
-fbsfMasc7Y663bPzkW+7Xt2635mRkJ1Qk7YonJzx5ux9XO/NT2nt8/wy0q+9+Xbz
-c8e3rBubN9253t37AllZze9nX87/3EPHV81s2MGa95pubxnf3zxg5bQ3KW096WCr
-M/5D7kBpktP9/EJFZ2ZscddVKjEvKvMMcyq5MO5QRuH6bXmvu2ePuddur+fLpw9b
-RtHUl9FRM+78756++paaA1Op7vzhd2d7s42NHb6FtierKw8mjuSGqLLB6YKdE2UD
-sd8bSy8ZlcljTriYX9WRLcz2fyz6dLr1qcxp1rqsi1cW52amR541LBTDgoftLUbM
-0MQ5KyWiMWusuKSuobd/LrTrsi9p/A9He0ET
-=MATf
+yMK6AnicrZNtiFRVGMdn1e1lanOoVlJ6cS8sFC7bebvnnjMuJojQWkhWBqU1nXvO
+uTOXmbl39t47k7ptZQZGiRQpKyEuRQvCysrSErZQrCYVWOuHQCK2xMGgIJlIW6Uv
+eu5UEOXH7pfDPfyf//N/fueck12LM9mO2Zn8qq2XcvMdp068Ws88vbM5OWy5odpu
+5Yetsm4vuqJ0nBTKvrLyFoAAOraNIVaUMiwg5IIQohziOtwjtnaowAhRIrQins0o
+h0hBT7pCcKkQIVxqIKw+y/ODoo5qkR8kxhYzJRyssc0ZpwRDhIyLw4gErsACubb0
+CARKmsJSGKcVJpwrYt3vh2bP/BTa8a6j/59z19t2DDpKSoo0QNQRVNvSlY5kNmWM
+Ug/yVBjrKBBVbdQv+JXKjpIIisC2Rvqsqo7KFV2IwjBJ+crET1XQBpAygrljZhRx
+qVDViUhHUhp4RHseAIwwIaUtoGCYQWDbLuEmt8elp6lUHhEmqRkbAdshkHMBPeiY
+KLEeCkLTAXGHYWwSRLoRlnXaPPaLhlxs5bdYTGjJeUoOudD1oIFlQEiMDQAJHK2Y
+yQEwhJRKA1lBwV2okediTLWGAHjWsyNps6jhy7Z5elT/RdBf9JNS3f3z5GpRmIQy
+rBhJKUlqcT4FlGyvtWu0W/jLreD6gTI3xlQ0dBT7YWDGMcp/s2N9lt5W8yNd8FOF
+7VAGzJf20Q1jqRhGQlFEuEJKC+C6nGPDjComKLeZIBwwoDT1MBHmAjqIC8rMSgQ0
+l0T/A6ZplYii8TQIA5HUI22NnJjduiTTkc3c0LkofUqZ7M25vx/YQuvGq4On7x9/
+bO3e5uVzX55/c2DNLtHi5Tf2PXqwnn3y9lv2DHYPrJ9bq+7o7MmdXNEKfrr39d3u
+y788d7hx5NOZZm3/9MID+5sb0dTZ3q+f9z65sh7k1mwb3fXiH71nJu6Oj3beylut
+xrLT8Y+7Lzxx+fjGWXVl1VjPNxNvTzWXrTx2oFo4frbr8Zem1dA93382BsqjT/Gh
+9wd+33vswXf7Np/KsqVn1v02PsdA0puMTzoLP3S99sx97KNDBzdL+MESvm5u8oD6
+YmpH9ZGVPw/3PPztpp1fbdgXb3jrtv7pX4NkZtP8O8snz01cuDgWfPjQ2J4tN62W
+n88PLn6l+66js3c2ur8bnTv/cW7RYfDeNbBWhaM=
+=/gx+
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
@@ -66,3 +79,4 @@ appending to this document.
 View my publicly-auditable identity here: https://keybase.io/willzhang05
 
 ==================================================================
+
