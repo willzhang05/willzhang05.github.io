@@ -190,22 +190,22 @@ section {
 
 #desc > h1 {
     font-size: 3.5em;
-    margin-top: 0.5em;
 }
 
 #desc > h2 {
-    width: calc(100% - 1em);
+    width: calc(100% - 5em);
     font-size: 1.2em;
-    padding: 0.5em 0;
+    padding: 0 2.5em;
+    margin: 0 0 0.5em 0;
     display: inline-block;
 }
 
 #desc > span {
-    width: calc(100% - 1em);
-    padding: 0 0.5em;
+    width: calc(100% - 5em);
     font-size: 1.2em;
     display: inline-block;
-    margin: 0.5em 0;
+    padding: 0 2.5em;
+    margin: 0 0 0.5em 0;
     clear: both;
 }
 
@@ -275,6 +275,10 @@ section {
 
 #desc {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     overflow-y: hidden;
     top: 20vh;
     left: 15vw;
