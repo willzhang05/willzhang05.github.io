@@ -136,18 +136,17 @@ span > a:active {
 }
 
 body {
-    overflow: hidden; /*IMPORTANT TO CHANGE IF EXPANDING*/
     width: 100%;
-    height: 100vh;
+    height: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-touch-callout: none
 }
 
 footer {
-    position: absolute;
+    position: relative;
     width: 100vw;
-    height: 25px;
-    top: calc(100vh - 25px);
+    height: 48px;
+    line-height: 48px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -159,9 +158,9 @@ footer {
 }
 
 #wrapper {
-    position: absolute;
+    position: relative;
     width: 100vw;
-    min-height: 100vh;
+    height: calc(100vh - 48px);
     z-index: 1;
     background-color: #616161;
     background-image: url('../images/bg3-min.jpg');
@@ -308,7 +307,7 @@ section {
         display: none;
     }
     section {
-        height: 100vh;
+        height: calc(100vh - 48px);
     }
     #desc > h1 {
         font-size: 2em;
@@ -317,12 +316,9 @@ section {
         top: 0;
         left: 0;
         width: 100vw;
-        height: 100vh;
+        height: 100%;
     }
 }
 
 @media screen and (max-width: 225px), screen and (max-height: 420px) {
-    #desc {
-        overflow-y: auto;
-    }
 }
