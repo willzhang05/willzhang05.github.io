@@ -8,7 +8,6 @@
     src: url('../fonts/OpenSans/OpenSans-Bold.ttf')
 }
 
-
 /*http://meyerweb.com/eric/tools/css/reset/*/
 html,body,div,span,button,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
     font: inherit;
@@ -101,12 +100,12 @@ button.flip {
 }
 
 button.flip.left {
-    top: calc(50% - 3vh);
+    top: calc(50vh - 3vh);
     left: 0;
 }
 
 button.flip.right {
-    top: calc(50% - 3vh);
+    top: calc(50vh - 3vh);
     right: 0;
 }
 
@@ -136,59 +135,133 @@ span > a:active {
 }
 
 body {
+    position: absolute;
+    left: 0;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-touch-callout: none
 }
 
+header {
+    position: relative;
+}
+
+a.menu-item {
+
+    font-size: 1.2em;
+}
+
+button.menu-item {
+    cursor: pointer;
+    outline: none;
+    width: 100px;
+    height: 48px;
+    background-color: transparent;
+}
+
+button.menu-item:hover {
+    text-decoration: underline;
+}
+
+#menu-toggle {
+    cursor: pointer;
+    outline: none;
+    display: none;
+    background-color: transparent;
+    z-index: 5;
+    
+}
+
+#menu-toggle:hover {
+}
+
+#menu-toggle:active {
+}
+
+#menu-toggle>i {
+    width: 48px;
+    height: 48px;
+    display: block;
+    background-image: url('../icons/menu.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+nav#menu {
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 5;
+}
+
 footer {
     position: relative;
-    width: 100vw;
-    height: 48px;
-    line-height: 48px;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    width: 100%;
+    
+    padding: 2vh 0;
     text-align: center;
     color: #fff;
-    background-color: #212121;
+    background-color: #f2f2f2;
     z-index: 10;
     opacity: 0.9;
 }
 
 #wrapper {
+}
+
+section {
     position: relative;
-    width: 100vw;
-    height: calc(100vh - 48px);
-    z-index: 1;
+    width: 100%;
+    height: 100vh;
+}
+
+#about {
+}
+
+#about:before {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    content: "";
     background-color: #616161;
     background-image: url('../images/bg3-min.jpg');
     background-size: cover;
     background-position-x: center;
     background-position-y: center;
     background-repeat: no-repeat;
+    -webkit-filter: blur(0.75px);
+    filter        : blur(0.75px); 
 }
 
-/*#wrapper:before {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    content: '';
-    display: block;
-    background-image: url('../images/bg3-min.jpg');
-    background-size: cover;
-    background-position-x: center;
-    background-position-y: center;
-    background-repeat: no-repeat;
-    z-index: -1;
-}*/
 
-section {
-    width: 100vw;
+#desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    width: 100%;
     height: 100vh;
+    text-align: center;
+    vertical-align: middle;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+#desc:before {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    content: "";
+    -webkit-filter: blur(20px);
+    filter        : blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 #desc > h1 {
@@ -211,25 +284,7 @@ section {
     clear: both;
 }
 
-/*@media (max-height: 300px) {
-    #desc > span {
-        width: calc(100% - 1em);
-        padding: 0 0.05em;
-        font-size: 0.7em;
-        display: inline-block;
-        margin: 0.5em 0;
-        clear: both;
-    }
-    #desc > h1 {
-        font-size: 1.5em;
-    }
-    #desc > h2 {
-        font-size: 0.7em;
-    }
-}*/
-
 #contact {
-    margin: 1em 0 0 0;
 }
 
 #resume a {
@@ -259,66 +314,8 @@ section {
     font-size: 1.1em;
 }
 
-#desc:before {
-    position: absolute;
-    top: 0vh;
-    bottom: 0vh;
-    left: 0vw;
-    right: 0vw;
-    width: 100%;
-    height: 100%;
-    content: "";
-    display: block;
-    background-color:  rgba(255, 255, 255, 0.1);
-    -webkit-filter: blur(10px);
-    filter        : blur(10px); 
-    z-index: -1;
+
+#photos {
+    background-color: #FFCC80;
 }
 
-#desc {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow-y: hidden;
-    top: 20vh;
-    left: 15vw;
-    width: 70vw;
-    min-height: 60vh; /*calc(10.6em + 50px);*/
-    text-align: center;
-    vertical-align: middle;
-    color: #000;
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 28px 79px 0 rgba(66,129,121,.27);
-}
-
-@media screen and (max-width: 900px) {
-    #desc {
-        left: 5vw;
-        top: 10vh;
-        width: 90vw;
-        height: 80vh;
-    }
-}
-
-@media screen and (max-width: 480px), screen and (max-height: 420px) {
-    button.flip {
-        display: none;
-    }
-    section {
-        height: calc(100vh - 48px);
-    }
-    #desc > h1 {
-        font-size: 2em;
-    }
-    #desc {
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100%;
-    }
-}
-
-@media screen and (max-width: 225px), screen and (max-height: 420px) {
-}

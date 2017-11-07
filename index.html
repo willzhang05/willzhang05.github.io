@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
     <link href="icons/favicon.ico" rel="icon" type="image/ico">
     <link href="css/main.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
 	<title>Home - William Zhang</title>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -20,14 +21,25 @@
     </script>
 </head>
 
-<body>
+<body class="fluid">
+    <header>
+        <nav id="menu">
+            <a class="menu-item" href="#about">
+                <button class="menu-item fluid">About</button>
+            </a>
+            <a class="menu-item" href="#photos">
+                <button class="menu-item fluid">Photos</button>
+            </a>
+            <a class="menu-item" href="https://blog.wzhang.me/">
+                <button class="menu-item fluid">Blog</button>
+            </a>
+        </nav>
+        <button id="menu-toggle">
+            <i></i>
+        </button>
+    </header>
     <div id="wrapper" class="fluid">
-        <button class="flip left">
-            <i class="left"></i>
-        </button>
-        <button class="flip right">
-            <i class="right"></i>
-        </button>
+        
         <!--<button class="expand up">
             <i class="up"></i>
         </button>-->
@@ -37,35 +49,44 @@
                 <h2>Systems Administrator, Software and Web Developer, Photographer</h2>
                 <span id="greeting">Hi there! I'm currently a senior at Thomas Jefferson High School for Science and Technology in Alexandria, VA.</span>
                 <div id="resume">
-		    <a id="resume" href="./resume.pdf" target="_blank">
-		        <button id="resume" class="fluid">Resume</button>
-		    </a>
-		</div>
-                <div id="contact">
-                    <a href="https://linkedin.com/in/willzhang05" target="_blank">
-                        <button class="social" id="linkedin">
-                        </button>
-                    </a>
-                    <a href="https://github.com/willzhang05" target="_blank">
-                        <button class="social" id="github">
-                        </button>
-                    </a>
-                    <a href="https://keybase.io/willzhang05" target="_blank">
-                        <button class="social" id="keybase">
-                        </button>
-                    </a>
-                    <a href="https://flickr.com/photos/126785613@N04" target="_blank">
-                        <button class="social" id="flickr">
-                        </button>
+                    <a id="resume" href="./resume.pdf" target="_blank">
+                        <button id="resume" class="fluid">Resume</button>
                     </a>
                 </div>
+                
             </div>
+            
         </section>
-        <!--<section id="photos">
-        </section>-->
+        <section id="photos">
+            <button class="flip left">
+                <i class="left"></i>
+            </button>
+            <button class="flip right">
+                <i class="right"></i>
+            </button>
+        </section>
     </div>
-    <footer>&copy; 2017 William Zhang</footer>
-    <script src="./scripts/gallery.js"></script>
+    <footer>
+        <div id="contact">
+            <a href="https://linkedin.com/in/willzhang05" target="_blank">
+                <button class="social" id="linkedin">
+                </button>
+            </a>
+            <a href="https://github.com/willzhang05" target="_blank">
+                <button class="social" id="github">
+                </button>
+            </a>
+            <a href="https://keybase.io/willzhang05" target="_blank">
+                <button class="social" id="keybase">
+                </button>
+            </a>
+            <a href="https://flickr.com/photos/126785613@N04" target="_blank">
+                <button class="social" id="flickr">
+                </button>
+            </a>
+        </div>
+    </footer>
+    <script src="./scripts/sidebar.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,50 @@
+@media screen and (max-width: 750px) {
+    #menu-toggle {
+        display: block;
+        position: fixed;
+        left: 0;
+    }
+    nav#menu {
+        width: 150px;
+        height: 100vh;
+        padding: 0;
+        position: fixed;
+        left: -150px;
+        top: 0;
+        transition: all 130ms ease;
+        display: block;
+        background-color: #000;
+        
+    }
+    a.menu-item {
+        width: 100%;
+        height: 100px;
+    }
+    button.menu-item {
+        font-size: 1.2em;
+        width: 100%;
+        min-width: 100%;
+        height: 4em;
+        line-height: 4em;
+        display: inline-block;
+        color: #fff;
+    }
+    div#logo {
+        margin-left: 48px;
+    }
+
+}
+
+@media screen and (max-width: 480px), screen and (max-height: 420px) {
+    button.flip {
+        display: none;
+    }
+    section {
+     
+    }
+    #desc > h1 {
+        font-size: 2em;
+    }
+    #desc {
+    }
+}
