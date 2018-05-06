@@ -1,0 +1,8 @@
+User-agent: Google
+Disallow: /icons
+Disallow: /fonts
+
+User-agent: *
+Disallow: /img
+Disallow: /icons
+Disallow: /fonts
