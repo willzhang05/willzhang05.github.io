@@ -1,0 +1,12 @@
+.streak {
+    stroke-dasharray: 25;
+    stroke-dashoffset: 500;
+    animation: dash 5s linear forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
