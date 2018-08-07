@@ -20,44 +20,19 @@
     </script>
 </head>
 <body>
-    <div id="sidebar-wrapper">
-        <div id="sidebar">
-        </div>
-    </div>
-    <div id="wrapper">
-        <div id="menu">
-            <button class="menu-buttons" onclick="window.location.href='index.html'">
-                HOME
-            </button>
-            <button class="menu-buttons" onclick="window.location.href='gallery.html'">
-                GALLERY
-            </button>
-            <button class="menu-buttons" onclick="window.location.href='projects.html'">
-                PROJECTS
-            </button>
-        </div>
-        <div id="header-wrapper">
-            <div id="header">
-                <div id="banner"></div>
-            </div>
-        </div>
-        <div id="content-wrapper">
-            <div id="gallery-wrapper">
-                <div class="window-bar">
-                    <button class="exit-button" onclick="document.getElementById('gallery-wrapper').style.visibility=document.getElementById('gallery').style.visibility='hidden';document.getElementById('gallery-wrapper').style.opacity='0'"></button>
-                    <div class="window-label">
-                        <div id="gallery-caption"></div>
-                    </div>
-                </div>
-                <div id="gallery"></div>
-            </div>
-            <div id="content"></div>
-        </div>
-        <div id="footer-wrapper">
-            <div id="footer">
-                <span>&copy; 2016 William Zhang</span>
-            </div>
-        </div>
+    <nav id="buttons">
+        <a id="home" href="index.html">
+            <button class="menu fluid" id="home">Home</button>
+        </a>
+        <a id="gallery" href="gallery.html">
+            <button class="menu fluid" id="gallery">Gallery</button>
+        </a>
+        <a id="blog" href="https://blog.wzhang.me">
+            <button class="menu fluid" id="blog">Blog</button>
+        </a>
+    </nav>
+    <div id="carousel">
+        <div id="image"></div>
     </div>
 </body>
 <script src="scripts/gallery.js"></script>
