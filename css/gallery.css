@@ -1,7 +1,6 @@
 body {
     background-color: #464646;
     width: 100vw;
-
 }
 
 button.menu {
@@ -18,27 +17,10 @@ button.flip > i {
     line-height: 9vh;
 }
 
-button.expand > i {
-
-}
-
 .material-icons.md-light { 
     color: rgba(255, 255, 255, 1);
     font-size: 4.5vh;
 }
-/*
-i.left {
-    background-image: url("../icons/ic_keyboard_arrow_left_white_48px.svg");
-}
-
-i.right {
-    background-image: url("../icons/ic_keyboard_arrow_right_white_48px.svg");
-}
-
-i.expand {
-    background-image: url("../icons/ic_expand_less_white_48px.svg");
-}
-*/
 
 button.flip {
     cursor: pointer;
@@ -80,14 +62,11 @@ button.action > i {
 }
 
 #carousel {
-    padding: 15px;
+    padding: 15px 0 0 0;
+    margin: 0px 15px 15px 15px;
     height: calc(100vh - 80px);
     width: calc(100% - 30px);
-}
-
-#image {
-    height: 100%;
-    width: 100%;
+    background-color: #212121;
     background-image: url('../images/bg.jpg');
     background-size: contain;
     background-position-x: center;
@@ -97,7 +76,7 @@ button.action > i {
 
 nav#toolbar {
     position: absolute;
-    bottom: 0;
+    bottom: 15px;
     left: calc(50% - 6vh);
     background-color: rgba(0, 0, 0, 0.3);
 }
