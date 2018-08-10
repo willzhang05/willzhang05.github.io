@@ -1,5 +1,6 @@
 /*http://meyerweb.com/eric/tools/css/reset/*/
-html,body,div,span,button,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+
+html, body, div, span, button, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     font: inherit;
     font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 100%;
@@ -51,30 +52,34 @@ button.social#linkedin {
     background: url('../icons/linkedin.png');
     background-size: cover;
 }
+
 button.social#github {
     background: url('../icons/github.png');
     background-size: cover;
 }
+
 button.social#keybase {
     background: url('../icons/keybase.png');
     background-size: cover;
 }
+
 button.social#flickr {
     background: url('../icons/flickr.png');
     background-size: cover;
 }
-button.flip > i {
+
+button.flip>i {
     height: 3vh;
     width: 3vh;
     display: block;
     background-size: cover;
 }
 
-span > a:hover {
+span>a:hover {
     color: #616161;
 }
 
-span > a:active {
+span>a:active {
     color: #212121;
 }
 
@@ -95,11 +100,11 @@ nav#buttons {
     z-index: 1;
 }
 
-#desc > h1 {
+#desc>h1 {
     font-size: 3em;
 }
 
-#desc > h2 {
+#desc>h2 {
     width: calc(100% - 5em);
     font-size: 1.2em;
     font-style: italic;
@@ -107,7 +112,7 @@ nav#buttons {
     display: inline-block;
 }
 
-#desc > span {
+#desc>span {
     width: calc(100% - 5em);
     font-size: 1.2em;
     display: inline-block;
@@ -132,7 +137,7 @@ nav#buttons {
 
 #resume button {
     width: 144px;
-    height: 50px;   
+    height: 50px;
     color: #fff;
     background-color: #1976D2;
 }
@@ -146,7 +151,7 @@ button.menu {
     max-width: 144px;
     height: 48px;
     margin: 0 5px;
-    color: #464646;
+    color: #000;
     border-bottom: 2px solid transparent;
     background-color: rgba(0, 0, 0, 0);
 }
@@ -169,7 +174,7 @@ button.menu:hover {
     top: 0;
     left: 0;
     width: 100%;
-    min-height: calc(100vh - 48px); /*calc(10.6em + 50px);*/
+    min-height: calc(100vh - 48px);
     text-align: center;
     vertical-align: middle;
     color: #000;

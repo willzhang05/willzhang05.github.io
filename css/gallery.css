@@ -1,6 +1,6 @@
 body {
-    background-color: #464646;
     width: 100vw;
+    background-color: #424242;
 }
 
 button.menu {
@@ -11,13 +11,7 @@ button.menu:hover {
     border-bottom: 2px solid #fff;
 }
 
-button.flip > i {
-    height: 9vh;
-    width: 6vh;
-    line-height: 9vh;
-}
-
-.material-icons.md-light { 
+.material-icons.md-light {
     color: rgba(255, 255, 255, 1);
     font-size: 4.5vh;
 }
@@ -31,13 +25,13 @@ button.flip {
 }
 
 button.flip.left {
-    top: 50%;
-    left: 15px;
+    top: calc(50% - 4.5vh);
+    left: 0;
 }
 
 button.flip.right {
-    top: 50%;
-    right: 15px;
+    top: calc(50% - 4.5vh);
+    right: 0;
 }
 
 button.flip:hover {
@@ -48,6 +42,12 @@ button.flip:active {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+button.flip>i {
+    width: 6vh;
+    height: 9vh;
+    line-height: 9vh;
+}
+
 button.action {
     width: 6vh;
     height: 6vh;
@@ -55,16 +55,17 @@ button.action {
     background-color: transparent;
 }
 
-button.action > i {
+button.action>i {
     width: 100%;
     float: left;
-
 }
 
 #carousel {
-    margin: 15px;
+    margin: 15px auto;
+    position: relative;
+    width: 75%;
+    max-width: calc(100% - 30px);
     height: calc(100vh - 80px);
-    width: calc(100% - 30px);
     background-color: #212121;
     background-image: url('../images/bg.jpg');
     background-size: contain;
@@ -75,7 +76,13 @@ button.action > i {
 
 nav#toolbar {
     position: absolute;
-    bottom: 15px;
     left: calc(50% - 6vh);
+    bottom: 0;
     background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 960px) {
+    #carousel {
+        width: 90%;
+    }
 }
