@@ -16,6 +16,8 @@ button.menu:hover {
     font-size: 4.5vh;
 }
 
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
 button.flip {
     cursor: pointer;
     position: absolute;
@@ -67,7 +69,6 @@ button.action>i {
     max-width: calc(100% - 30px);
     height: calc(100vh - 80px);
     background-color: #212121;
-    background-image: url('../images/bg.jpg');
     background-size: contain;
     background-position-x: center;
     background-position-y: center;
