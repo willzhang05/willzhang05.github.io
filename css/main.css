@@ -1,6 +1,16 @@
-/*http://meyerweb.com/eric/tools/css/reset/*/
+@font-face {
+    font-family: OpenSans;
+    src: url('../fonts/OpenSans/OpenSans-Regular.ttf')
+}
+@font-face {
+    font-family: OpenSans;
+    font-weight: bold;
+    src: url('../fonts/OpenSans/OpenSans-Bold.ttf')
+}
 
-html, body, div, span, button, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+
+/*http://meyerweb.com/eric/tools/css/reset/*/
+html,body,div,span,button,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
     font: inherit;
     font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 100%;
@@ -31,13 +41,6 @@ a {
     text-decoration: none;
 }
 
-button {
-    cursor: pointer;
-    font-size: 1.2em;
-    outline: none;
-    display: inline-block;
-}
-
 button.social {
     cursor: pointer;
     outline: none;
@@ -52,34 +55,83 @@ button.social#linkedin {
     background: url('../icons/linkedin.png');
     background-size: cover;
 }
-
 button.social#github {
     background: url('../icons/github.png');
     background-size: cover;
 }
-
 button.social#keybase {
     background: url('../icons/keybase.png');
     background-size: cover;
 }
-
 button.social#flickr {
     background: url('../icons/flickr.png');
     background-size: cover;
 }
-
-button.flip>i {
+button.flip > i {
     height: 3vh;
     width: 3vh;
     display: block;
     background-size: cover;
 }
 
-span>a:hover {
+button.expand > i {
+
+}
+
+i.left {
+    background-image: url("../icons/ic_keyboard_arrow_left_black_48px.svg");
+}
+
+i.right {
+    background-image: url("../icons/ic_keyboard_arrow_right_black_48px.svg");
+    
+}
+
+i.expand {
+    background-image: url("../icons/ic_expand_less_white_48px.svg");
+}
+
+button.flip {
+    cursor: pointer;
+    position: absolute;
+    height: 6vh;
+    width: 3vh;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+button.flip.left {
+    top: calc(50% - 3vh);
+    left: 0;
+}
+
+button.flip.right {
+    top: calc(50% - 3vh);
+    right: 0;
+}
+
+button.flip:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+button.flip:active {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+button.expand {
+    cursor: pointer;
+    position: absolute;
+    height: 6vh;
+    width: 4vh;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+span > a:hover {
     color: #616161;
 }
 
-span>a:active {
+span > a:active {
     color: #212121;
 }
 
@@ -87,24 +139,63 @@ body {
     width: 100%;
     height: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-touch-callout: none;
-    background-color: #E1F5FE;
+    -webkit-touch-callout: none
 }
 
-nav#buttons {
-    background-color: transparent;
+footer {
+    position: relative;
+    width: 100vw;
+    height: 48px;
+    line-height: 48px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    background-color: #212121;
+    z-index: 10;
+    opacity: 0.9;
 }
 
 #wrapper {
     position: relative;
+    width: 100vw;
+    height: calc(100vh - 48px);
     z-index: 1;
+    background-color: #616161;
+    background-image: url('../images/bg3-min.jpg');
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
 }
 
-#desc>h1 {
-    font-size: 3em;
+/*#wrapper:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    display: block;
+    background-image: url('../images/bg3-min.jpg');
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}*/
+
+section {
+    width: 100vw;
+    height: 100vh;
 }
 
-#desc>h2 {
+#desc > h1 {
+    font-size: 3.5em;
+}
+
+#desc > h2 {
     width: calc(100% - 5em);
     font-size: 1.2em;
     font-style: italic;
@@ -112,13 +203,30 @@ nav#buttons {
     display: inline-block;
 }
 
-#desc>span {
+#desc > span {
     width: calc(100% - 5em);
     font-size: 1.2em;
     display: inline-block;
     margin: 0 0 1em 0;
     clear: both;
 }
+
+/*@media (max-height: 300px) {
+    #desc > span {
+        width: calc(100% - 1em);
+        padding: 0 0.05em;
+        font-size: 0.7em;
+        display: inline-block;
+        margin: 0.5em 0;
+        clear: both;
+    }
+    #desc > h1 {
+        font-size: 1.5em;
+    }
+    #desc > h2 {
+        font-size: 0.7em;
+    }
+}*/
 
 #contact {
     margin: 1em 0 0 0;
@@ -135,33 +243,41 @@ nav#buttons {
     z-index: 10;
 }
 
-#resume button {
-    width: 144px;
+#resume button, #blog button {
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    width: 150px;
     height: 50px;
+    outline: none;
     color: #fff;
     background-color: #1976D2;
+    border: none;
+    display: inline-block;
 }
 
-#resume:hover button {
+#resume:hover button, #blog:hover button {
     background-color: #1565C0;
 }
 
-button.menu {
-    width: calc(100vw / 4);
-    max-width: 144px;
-    height: 48px;
-    margin: 0 5px;
-    color: #000;
-    border-bottom: 2px solid transparent;
-    background-color: rgba(0, 0, 0, 0);
-}
-
-button.menu:hover {
-    border-bottom: 2px solid #464646;
-}
-
-#resume:active button, button.menu:active {
+#resume:active button, #blog:active button {
     font-size: 1.1em;
+}
+
+#desc:before {
+    position: absolute;
+    top: 0vh;
+    bottom: 0vh;
+    left: 0vw;
+    right: 0vw;
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    background-color:  rgba(255, 255, 255, 0.1);
+    -webkit-filter: blur(10px);
+    filter        : blur(10px); 
+    z-index: -1;
 }
 
 #desc {
@@ -171,11 +287,43 @@ button.menu:hover {
     align-items: center;
     justify-content: center;
     overflow-y: hidden;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: calc(100vh - 48px);
+    top: 20vh;
+    left: 15vw;
+    width: 70vw;
+    min-height: 60vh; /*calc(10.6em + 50px);*/
     text-align: center;
     vertical-align: middle;
     color: #000;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 28px 79px 0 rgba(66,129,121,.27);
+}
+
+@media screen and (max-width: 900px) {
+    #desc {
+        left: 5vw;
+        top: 10vh;
+        width: 90vw;
+        height: 80vh;
+    }
+}
+
+@media screen and (max-width: 480px), screen and (max-height: 420px) {
+    button.flip {
+        display: none;
+    }
+    section {
+        height: calc(100vh - 48px);
+    }
+    #desc > h1 {
+        font-size: 2em;
+    }
+    #desc {
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 225px), screen and (max-height: 420px) {
 }

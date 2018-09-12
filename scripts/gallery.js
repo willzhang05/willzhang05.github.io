@@ -1,89 +1,144 @@
 "use strict"
-const url = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&photoset_id=72157689349104906&user_id=126785613%40N04&extras=original_format&format=json&nojsoncallback=1&api_key=9f46232676650675ddd2cc7bf3ca979d";
-const carousel = document.querySelector("#carousel");
-const link = document.getElementById("link");
-const download = document.getElementById("download");
-const left = document.querySelectorAll("button.flip.left")[0];
-const right = document.querySelectorAll("button.flip.right")[0];
-const leftIcon = document.querySelectorAll("i.left.material-icons.md-light")[0];
-const rightIcon = document.querySelectorAll("i.right.material-icons.md-light")[0];
-var photoArr = [];
-var index = 0;
+var script = document.createElement("script"),
+    load = document.createElement("button"),
+    linkArr = [],
+    capArr = [],
+    imgMod = [],
+    imgNum = 0,
+    isZoom = false,
+    isLoad = false;
 
-function getData(url, callback) {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', url);
-    xhr.onload = function (error, response, data) {
-        var data = JSON.parse(xhr.responseText);
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            callback(data);
-        } else {
-            console.error(data);
-        }
+script.src = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=ae976304a535e7ed8ff2100c1d5b2dc7&photoset_id=72157659451270924&user_id=126785613%40N04&extras=original_format&format=json&api_key=9f46232676650675ddd2cc7bf3ca979d";
+var wrapper = document.getElementById("wrapper");
+wrapper.appendChild(script);
+//load.id = "load-more";
+//load.innerHTML = "Load More...";
+//document.getElementById("content").appendChild(load);
+var left = document.querySelectorAll("button.flip.left")[0];
+var right = document.querySelectorAll("button.flip.right")[0];
 
-    }
-    xhr.send(null);
-}
-
-function loadUrls(data) {
+function jsonFlickrApi(data) {
     var photos = data.photoset.photo;
-    for (var i = 0; i < photos.length; i++) {
-        var photo = {};
-        photo.id = photos[i].id;
-        photo.url = "https://farm" + photos[i].farm + ".staticflickr.com/" + photos[i].server + "/" + photos[i].id + "_" + photos[i].secret + "_b.jpg";
-        photo.original = "https://farm" + photos[i].farm + ".staticflickr.com/" + photos[i].server + "/" + photos[i].id + "_" + photos[i].originalsecret + "_o." + photos[i].originalformat;
-        photo.title = photos[i].title;
-        photoArr.push(photo);
-    }
-    var urlString = "url('" + photoArr[0].url + "')";
-    carousel.style.backgroundImage = urlString;
-    link.href = "https://flickr.com/photos/" + data.photoset.owner + "/" + photoArr[0].id + "/in/album-" + data.photoset.id;
-    var dlUrl = photoArr[index].original.replace("_o", "_o_d");
-    download.href = dlUrl;
-
-    leftIcon.classList.add("md-inactive");
-    left.onclick = function () {
-        if (index > 0) {
-            index--;
-            var urlString = "url('" + photoArr[index].url + "')";
-            carousel.style.backgroundImage = urlString;
-            link.href = "https://flickr.com/photos/" + data.photoset.owner + "/" + photoArr[index].id + "/in/album-" + data.photoset.id;
-            var dlUrl = photoArr[index].original.replace("_o", "_o_d");
-            download.href = dlUrl;
-            if (index == 0 && !leftIcon.classList.contains("md-inactive")) {
-                leftIcon.classList.add("md-inactive");
-            } else {
-                leftIcon.classList.remove("md-inactive");
-                if (index != photoArr.length - 1 && photoArr.length > 1) {
-                    rightIcon.classList.remove("md-inactive");
-                }
-            }
+    /*for (var i = 0; i < photos.length; i++) {
+        linkArr.push(["https://farm" + photos[i].farm + ".staticflickr.com/" + photos[i].server + "/" + photos[i].id + "_" + photos[i].secret + "_s.jpg",
+            "https://farm" + photos[i].farm + ".staticflickr.com/" + photos[i].server + "/" + photos[i].id + "_" + photos[i].originalsecret + "_o." + photos[i].originalformat
+        ]);
+        capArr.push(photos[i].title);
+    }*/
+    linkArr = [["./images/bg3-min.jpg", "./images/bg3.jpg"], ["./images/bg1-min.jpg", "./images/bg1.jpg"], ["./images/bg2-min.jpg", "./images/bg2.jpg"], ["./images/bg4-min.jpg", "./images/bg4.jpg"]];
+    left.onclick = function() {
+        if(imgNum > 0) {
+            imgNum--;
         }
-    }
-    right.onclick = function () {
-        if (index < photoArr.length - 1) {
-            index++;
-            var urlString = "url('" + photoArr[index].url + "')";
-            carousel.style.backgroundImage = urlString;
-            link.href = "https://flickr.com/photos/" + data.photoset.owner + "/" + photoArr[index].id + "/in/album-" + data.photoset.id;
-            var dlUrl = photoArr[index].original.replace("_o", "_o_d");
-            download.href = dlUrl;
-            if (index == photoArr.length - 1 && !rightIcon.classList.contains("md-inactive")) {
-                rightIcon.classList.add("md-inactive");
-                if (index != 0 && photoArr.length > 1) {
-                    leftIcon.classList.remove("md-inactive");
-                }
-            } else {
-                rightIcon.classList.remove("md-inactive");
-                if (index != 0 && photoArr.length > 1) {
-                    leftIcon.classList.remove("md-inactive");
-                }
-            }
+        var bgImg = new Image();
+        bgImg.onload = function() {
+            wrapper.style.backgroundImage = "url('" + bgImg.src + "')";
         }
-
+        bgImg.src = linkArr[imgNum][0];
     }
-
+    right.onclick = function() {
+        if(imgNum < linkArr.length - 1) {
+            imgNum++;
+        }
+        var bgImg = new Image();
+        bgImg.onload = function() {
+            wrapper.style.backgroundImage = "url('" + bgImg.src + "')";
+        }
+        bgImg.src = linkArr[imgNum][0];
+        /*sheet.addRule("#wrapper:before","url('" + linkArr[imgNum][1] + "')")
+        sheet.insertRule("#wrapper:before { url('" + linkArr[imgNum][1] + "')", 0);*/
+    }
 }
 
+/*function loadMore() {
+    var temp = imgNum,
+    	loadNum = (2 * Math.floor((window.innerWidth - 296) / 325)) == 0 ? 2 : (2 * Math.floor((window.innerWidth - 296) / 325));
+    if (temp + loadNum > linkArr.length) {
+        for (var i = imgNum; i < linkArr.length; i++) {
+            imgMod.push(new imgModule(linkArr[linkArr.length - i - 1], capArr[capArr.length - i - 1]));
+            imgNum++;
+        }
+        document.getElementById("load-more").style.display = "none";
+    } else {
+        for (var i = imgNum; i < temp + loadNum; i++) {
+            imgMod.push(new imgModule(linkArr[linkArr.length - i - 1], capArr[capArr.length - i - 1]));
+            imgNum++;
+        }
+    }
+}*/
 
-getData(url, loadUrls);
+/*function expandImage(url, cap) {
+    var gallery = document.getElementById("gallery"),
+        galleryWrap = document.getElementById("gallery-wrapper");
+    gallery.innerHTML = "";
+    gallery.style.visibility = "visible";
+    galleryWrap.style.opacity = "1";
+    galleryWrap.style.visibility = "visible";
+    document.getElementById("gallery-caption").innerHTML = cap;
+
+    var img = new Image();
+    img.src = url;
+    var preload = document.createElement("div");
+    preload.className = "md-preloader";
+    preload.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="75" width="75" viewbox="0 0 75 75"><circle cx="37.5" cy="37.5" r="33.5" stroke-width="8"/></svg>';
+    var checkLoad = window.setInterval(function() {
+        isLoad = img.complete;
+        if (gallery.firstChild == null) {
+            gallery.appendChild(preload);
+        }
+        if (isLoad) {
+            gallery.innerHTML = "";
+            gallery.appendChild(img);
+            gallery.style.cursor = "zoom-in";
+            window.clearInterval(checkLoad);
+        }
+    }, 100);
+}*/
+
+/*window.onload = function() {
+	var initNum = (Math.floor((window.innerWidth - 296) / 325)) == 0 ? 1 : (2 * Math.floor((window.innerWidth - 296) / 325));
+    for (var i = imgNum; i < 4 * initNum; i++) {
+        imgMod.push(new imgModule(linkArr[linkArr.length - i - 1], capArr[capArr.length - i - 1]));
+        imgNum++;
+    }
+}*/
+
+/*gallery.ondblclick = function() {
+    if(isLoad) {
+        if(isZoom) {
+            gallery.style.cursor = "zoom-in";
+            this.style.transform = "scale(1)";
+            this.style.top = "0px";
+            this.style.left = "0px";
+        } else {
+            gallery.style.cursor = "zoom-out";
+            this.style.transform = "scale(2)";*/
+            /*this.style.top = 2 * event.y + "px";
+            this.style.left = 2 * event.x + "px";*/     
+        /*}
+        isZoom = !isZoom;
+    }
+}*/
+
+/*function imgModule(url, cap) {
+        this.url = url[0];
+        this.orig = url[1];
+        var parent = document.getElementById("content"),
+            imgCard = document.createElement("div"),
+            mod = document.createElement("div"),
+            bar = document.createElement("div"),
+            label = document.createElement("div");
+        imgCard.className = "image-card";
+        imgCard.style.backgroundImage = "url(" + url[0] + ")";
+        imgCard.onclick = function() {
+            expandImage(url[1], cap);
+        };
+        mod.className = "";
+        bar.className = "info-overlay";
+        label.className = "info-text";
+        label.innerHTML = cap;
+        imgCard.appendChild(bar);
+        bar.appendChild(label);
+        imgCard.appendChild(mod);
+        parent.insertBefore(imgCard, document.getElementById("load-more"));
+}*/
